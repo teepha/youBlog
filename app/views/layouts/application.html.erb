@@ -11,9 +11,11 @@
   </head>
 
   <body>
-    <%= render 'layouts/messages' %>
-    <%= render 'layouts/navigation' %>
-    <div class="container">
+    <header>
+      <%= render 'layouts/navigation' %>
+    </header>
+    <div class="container-fluid">
+      <%= render 'layouts/messages' %>
       <%= yield %>
     </div>
     <%= render 'layouts/footer' %>
