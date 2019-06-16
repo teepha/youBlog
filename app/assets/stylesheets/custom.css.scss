@@ -40,7 +40,7 @@ $navbar-default-bg: black;
 
 .article-title {
   font-weight: bold;
-  font-size: 1.5em;  
+  font-size: 1.5em;
 }
 
 .article-body {
@@ -50,11 +50,22 @@ $navbar-default-bg: black;
 
 .listing {
   list-style: none;
-  padding-left: 10px
+  padding-left: 10px;
 }
 
 .dropdown-menu .divider {
   height: 2px;
+}
+
+.dropdown {
+  i {
+    font-size: 20px;
+  }
+}
+
+.user-image {
+  position: relative;
+  margin: 3rem auto 1rem;
 }
 
 footer {

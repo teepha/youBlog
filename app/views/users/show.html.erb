@@ -1,9 +1,16 @@
 <h1 align=center><%= @user.username %>'s page</h1>
 <div class="row">
-  <div class="col-md-4 col-md-offset-4" align="center">
+  <div class="user-image">
     <%= gravatar_for @user, size:150 %>
   </div>
+  <p><%= @user.username %></p>
+  <p><%= @user.email %></p>
 </div>
-<h4 align="center"><%= @user.username %>'s articles</h4>
-<%= render  "articles/article", obj: @user_articles %>
+<div class="btn btn-xs btn-primary">New Article</div>
+
+<% if @user_articles.length > 0 %>
+  <%= render  "articles/article", obj: @user_articles %>
+<% else %>
+  <p>Sorry, you do not have any articles yet! Click on the <strong>New Article</strong> button above.</p>
+<% end %>
 <div align="center"><%= will_paginate @user_articles %></div>
