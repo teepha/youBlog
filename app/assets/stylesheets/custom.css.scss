@@ -104,3 +104,15 @@ footer {
     }
   }
 }
+
+.item-category {
+  text-transform: capitalize;
+  letter-spacing: -1px;
+  background: whitesmoke;
+  padding: 0.5rem;
+  color: #777;
+}
+
+.input_checkbox input {
+  width: auto !important;
+}
