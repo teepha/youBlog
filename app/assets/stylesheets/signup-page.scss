@@ -1,0 +1,122 @@
+.banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.66)),
+    url("signup.jpg") center/cover;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 110px auto;
+}
+
+.container-fluid {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  margin: 120px auto auto;
+
+  .main-wrapper {
+    width: 300px;
+    position: relative;
+
+    h2 {
+      color: #ffffff;
+      margin: 0;
+      text-align: center;
+      font-size: 16px;
+      margin-bottom: 30px;
+
+      &:hover {
+        color: #ff7a00;
+      }
+    }
+
+    .signup-form {
+      margin: auto;
+      width: 100%;
+      height: auto;
+      border: 1px solid #fff;
+      padding: 40px 30px;
+      border-radius: 5px;
+
+      .form-horizontal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .form-group {
+          position: relative;
+          width: 310px;
+          margin-bottom: 8px;
+        }
+
+        .col-sm-6 input {
+          width: 100%;
+          min-width: 280px;
+          padding-left: 36px;
+          height: 38px;
+          border-radius: 0;
+          background: #fcfcfc;
+          border: 1px solid #aaa;
+        }
+
+        .col-sm-6 .fa-user,
+        .col-sm-6 .fa-envelope,
+        .col-sm-6 .fa-lock {
+          position: absolute;
+          top: 10px;
+          left: 28px;
+        }
+
+        .col-sm-6 input[type="submit"] {
+          color: #ffffff;
+          background: #ff7a00;
+          text-align: center;
+          font-size: 16px;
+          padding-left: 12px;
+          outline: none;
+          border: transparent;
+          border-radius: 3px;
+          margin-top: 8px;
+          cursor: pointer;
+        }
+      }
+
+      p {
+        color: #ffffff;
+        font-size: 13px;
+        line-height: 16px;
+        margin-bottom: 30px;
+
+        a {
+          color: #ffffff;
+
+          &:hover {
+            color: #ff7a00;
+            text-decoration: none;
+          }
+        }
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+
+        a {
+          &:hover {
+            transform: scale(1.3);
+            transition: all 0.2s ease-in-out;
+          }
+
+          img {
+            height: 20px;
+            padding-left: 1rem;
+          }
+        }
+
+        #facebook > img {
+          height: 26px;
+        }
+      }
+    }
+  }
+}
