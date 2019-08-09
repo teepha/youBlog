@@ -12,8 +12,10 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <% if signup_path %>
+    <% if current_page?(signup_path) %>
       <span><%= link_to "Log in", login_path %></span>
+    <% elsif current_page?(login_path) %>
+      <span><%= link_to "Sign Up", signup_path %></span>
     <% else %>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">

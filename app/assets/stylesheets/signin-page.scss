@@ -1,7 +1,7 @@
-#main-signup {
+#main-login {
   flex: 1;
   background: linear-gradient(rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.66)),
-    url("signup.jpg") center/cover;
+    url("login.jpg") center/cover;
 }
 
 .container-fluid {
@@ -18,9 +18,10 @@
     margin-bottom: 30px;
   }
 
-  .signup-form {
+  .login-form {
+    display: flex;
     margin: auto;
-    width: 100%;
+    width: 90%;
     height: auto;
     border: 1px solid #fff;
     padding: 40px 30px;
@@ -36,6 +37,12 @@
         margin-bottom: 8px;
       }
 
+      .login-header {
+        font-size: 18px;
+        line-height: 21px;
+        text-align: center;
+      }
+
       .col-sm-6 input {
         width: 100%;
         min-width: 280px;
@@ -46,12 +53,35 @@
         border: 1px solid #aaa;
       }
 
-      .col-sm-6 .fa-user,
       .col-sm-6 .fa-envelope,
       .col-sm-6 .fa-lock {
         position: absolute;
         top: 10px;
         left: 28px;
+      }
+
+      .login-actions {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        p {
+          margin-bottom: 10px;
+
+          a:hover {
+            color: #ff7a00;
+            text-decoration: none;
+          }
+        }
+
+        a {
+          color: #ffffff;
+
+          &:hover {
+            color: #ff7a00;
+            text-decoration: none;
+          }
+        }
       }
 
       .col-sm-6 input[type="submit"] {
@@ -88,17 +118,11 @@
       }
     }
 
-    .signup-actions {
-      p {
-        margin-bottom: 10px;
-      }
-    }
-
     .social-links {
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
 
       a {
         &:hover {

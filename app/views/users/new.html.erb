@@ -4,7 +4,9 @@
       <h2 align="center"> Sign up for free to start sharing <br> your inspiration and story on authors haven</h2>
       <div class="signup-form">
         <%= render  "form" %>
-        <p>Already registered? <%= link_to  "Log in", login_path %></p>
+        <div class="signup-actions">
+          <p>Already registered? <%= link_to  "Log in", login_path %></p>
+        </div>
         <br>
         <p class="social-links">Sign up with 
           <a href="#" id="twitter" target="_blank"><%= image_tag "twitter.png" %></a>

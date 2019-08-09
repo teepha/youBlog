@@ -1,28 +1,44 @@
-<h1 align="center">Login</h1>
-<%= form_for(:session, :html => {class: "form-horizontal", role: "form"}, url: login_path) do |f| %>
-
-  <div class="form-group">
-    <div class="control-label col-sm-3">
-      <i class="fas fa-envelope"></i>
-    </div>
-    <div class="col-sm-6">
-      <%= f.email_field :email, class: "form-control", placeholder: "Email Addres" %>
+<div id="main-login">
+  <div class="container-fluid">
+    <div class="row">
+      <h2 align="center">Log in to start doing what you know how to do best!</h2>
+      <div class="login-form">
+        <div class='row'>
+          <div class='col-xs-12'>
+            <%= form_for(:session, :html => {class: "form-horizontal", role: "form"}, url: login_path) do |f| %>
+              <div class="form-group">
+                <p class="login-header">Log in to your account</p>
+                <div class="col-sm-6">
+                  <span class="fas fa-envelope"></span>
+                  <%= f.email_field :email, class: "form-control", placeholder: "Email Address" %>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-6">
+                  <span class="fas fa-lock"></span>
+                  <%= f.password_field :password, class: "form-control", autocomplete: "off", placeholder: "Password" %>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <div class="col-sm-6">
+                  <%= f.submit "Log in", class: "btn btn-primary btn-lg" %>
+                </div> 
+              </div>
+              <div class="login-actions">
+                <p>New Here? <%= link_to  "Sign Up", signup_path %></p>
+                <a href="#">Forgot password?</a>
+              </div>
+              <br>
+              <p class="social-links">Log in with 
+                <a href="#" id="twitter" target="_blank"><%= image_tag "twitter.png" %></a>
+                <a href="#" id="google" target="_blank"><%= image_tag  "google.png" %></a> 
+                <a href="#" id="facebook" target="_blank"><%= image_tag  "facebook.png" %></a>
+              </p>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="form-group">
-    <div class="control-label col-sm-3">
-      <i class="fas fa-lock"></i>
-    </div>
-    <div class="col-sm-6">
-      <%= f.password_field :password, class: "form-control", autocomplete: "off", placeholder: "Password" %>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-offset-3 col-sm-10">
-      <%= f.submit "Login", class: "btn btn-primary btn-lg" %>
-    </div> 
-  </div>
-  <div class="col-sm-offset-3 col-sm-10">
-    <small>New Here? <%= link_to  "SignUp", signup_path %></small>
-  </div>
-<% end %>
+</div>
