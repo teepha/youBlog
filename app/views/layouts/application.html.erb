@@ -11,15 +11,15 @@
   </head>
 
   <body>
-    <div class="banner">
-      <header>
-        <%= render 'layouts/navigation' %>
-      </header>
-      <div class="container-fluid ">
-        <%= render 'layouts/messages' %>
-        <%= yield %>
-      </div>
-    </div>
+    <header>
+      <%= render 'layouts/navigation' %>
+    </header>
+    <%
+=begin%>
+ <%= render 'layouts/messages' %> 
+<%
+=end%>
+    <%= yield %>
     <%= render 'layouts/footer' %>
     <%= debug(params) if Rails.env.development? %>
   </body>
