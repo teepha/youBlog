@@ -1,15 +1,17 @@
 <% if logged_in? %>
-  <div class="container">
-    <footer class="footer">
-      <small class="footer-link">
+  
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-link">
         <%= link_to "Home", root_path %> | <%= link_to 'About', about_path %>
         <p>youBlog &copy; 2019</p>
-      </small>
+      </div>
       <div class="social-link">
         <a href="#"><i class="fab fa-facebook-f"></i></a>
         <a href="#"><i class="fab fa-twitter"></i></a>
         <a href="#"><i class="fab fa-linkedin-in"></i></a>
       </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
+  
 <% end %>
