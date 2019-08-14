@@ -19,12 +19,14 @@
 //= require_tree .
 
 $(document).ready(function() {
-  $(".form-group").hide();
+  // Navbar search bar
+  $(".navbar-search-bar input").hide();
 
   $(".fa-search").hover(function() {
-    $(".form-group").show();
+    $(".navbar-search-bar input").show();
   });
 
+  // Profile page
   $(".main-posts").show();
 
   $(".menu__items").click(function() {

@@ -2,7 +2,7 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash|Josefin+Sans:400,700|Montserrat|Sofia&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Berkshire+Swash|Josefin+Sans:400,700|Montserrat|Sofia&display=swap");
 
 body {
   display: flex;
@@ -77,16 +77,18 @@ body {
 
     .collapse {
       margin-left: 50%;
+      display: flex !important;
 
-      .navbar-form {
+      .navbar-search-bar {
         padding-left: 0;
         padding-right: 0;
         margin: 10px auto 8px;
+        display: flex;
 
-        .form-group {
-          input[type="text"] {
-            border-color: #001935;
-          }
+        input[type="text"] {
+          border: 1px solid #546e7a;
+          border-radius: 4px;
+          padding: 4px 8px;
         }
 
         button[type="submit"] {
@@ -109,7 +111,7 @@ body {
           }
 
           .dropdown-menu {
-            box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+            box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.25);
             border: 1px solid rgba(34, 36, 38, 0.15);
             border-radius: 4px;
             min-width: max-content;
@@ -150,7 +152,6 @@ body {
     font-size: 20px;
   }
 }
-
 
 footer {
   background-color: #001935;

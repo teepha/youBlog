@@ -35,12 +35,10 @@
             </li>
           <% end %>
         </ul>
-        <form class="navbar-form navbar-left">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
-          </div>
-          <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
-        </form>
+        <div class="navbar-search-bar">
+          <input type="text" class="search-bar__input" placeholder="Search">
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
             <li><a href="#"><i class="far fa-bell"></i></a></li>
