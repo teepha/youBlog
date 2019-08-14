@@ -143,16 +143,6 @@ body {
   padding-left: 10px;
 }
 
-.dropdown-menu .divider {
-  height: 2px;
-}
-
-.dropdown {
-  i {
-    font-size: 20px;
-  }
-}
-
 footer {
   background-color: #001935;
   display: flex;
@@ -213,14 +203,6 @@ footer {
       }
     }
   }
-}
-
-.item-category {
-  text-transform: capitalize;
-  letter-spacing: -1px;
-  background: whitesmoke;
-  padding: 0.5rem;
-  color: #777;
 }
 
 .input_checkbox input {
