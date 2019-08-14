@@ -14,6 +14,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require quill.min
+//= require quill.global
 //= require activestorage
 //= require turbolinks
 //= require_tree .

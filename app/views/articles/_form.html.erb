@@ -1,41 +1,27 @@
 <%= render 'shared/errors', obj: @article %>
 
-<div class='row'>
-  <div class='col-xs-12'>
-    <%= form_for(@article, :html => {class: "form-horizontal", role: "form"}) do |f| %>
-      <div class="form-group">
-        <div class="control-label col-sm-3">
-          <%= f.label :title %><br/>
-        </div>
-        <div class="control-label col-sm-6">
-          <%= f.text_field :title, class: "form-control", placeholder: "Title of article", autofocus: true %>
-        </div>
+<div class='new-article__wrapper'>
+  
+    <%= form_for(@article, :html => {class: "new-article", role: "form"}) do |f| %>
+      <div class="new-article__actions">
+        <button class="preview-button">Preview</button>&nbsp; &nbsp; &nbsp;
+        <%= f.submit class: "publish-button", value: "Publish" %>
       </div>
-      <div class="form-group">
-        <div class="control-label col-sm-3">
-          <%= f.label :description %>
-        </div>
-        <div class="control-label col-sm-6">
-          <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Body of article" %>
-        </div>
+      <%= f.text_field :title, placeholder: "Title please...", autofocus: true %>
+      <%= f.text_area :description, rows: 10, placeholder: "Share your story...", class: 'quill_container' %>
+      <div class="side-toolbar">
+        <button class="side-toolbar__button" type="button">
+          <svg viewBox="0 0 8 8" height="14" width="14"><path d="M3 0v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2z"></path></svg>
+        </button>
       </div>
-      <div class="form-group">
-        <div class="row">
-          <div class="col-sm-offset-3 col-sm-8">
-          <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
-            <% cb.label(class: "checkbox-inline input_checkbox") {cb.check_box(class: "checkbox") + cb.text.capitalize} %>
-          <% end %>
-        </div>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-sm-offset-3 col-sm-10">
-          <%= f.submit class: "btn btn-primary btn-lg" %>
-        </div>
-      </div>
+      
+      <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
+        <% cb.label(class: "checkbox-inline input_checkbox") {cb.check_box(class: "checkbox") + cb.text.capitalize} %>
+      <% end %>
+
     <% end %>
     <div class="col-xs-4 col-xs-offset-5">
       [ <%= link_to "Cancel request and return to Articles listing", articles_path %> ]
     </div>
-  </div>
+  
 </div>
