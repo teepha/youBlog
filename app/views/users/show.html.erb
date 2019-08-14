@@ -28,7 +28,7 @@
         <% if @user_articles.length > 0 %>
           <%= render  "articles/article", obj: @user_articles %>
         <% else %>
-          <p>Sorry, you do not have any articles yet! Click on the <strong>New Article</strong> button above.</p>
+          <p>Sorry, you do not have any articles yet!</p>
         <% end %>
       <div align="center"><%= will_paginate @user_articles %></div>
     </div>
