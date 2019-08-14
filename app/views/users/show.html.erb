@@ -1,16 +1,46 @@
-<h1 align=center><%= @user.username %>'s page</h1>
-<div class="row">
-  <div class="user-image">
-    <%= gravatar_for @user, size:150 %>
+<div id="main-dashboard">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="profile-info">
+        <div class="profile-info__image">
+          <%= gravatar_for @user, size:150 %>
+        </div>
+        <div class="profile-info__content">
+          <h2 align=center><%= @user.username %>'s page</h2>
+          <p><%= @user.email %></p>
+          <p>Description- hard code. Change this later.</p>
+          <div>
+            <%= link_to "Edit Profile", edit_user_path(current_user), class: "profile-info__action", type: "button" %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <p><%= @user.username %></p>
-  <p><%= @user.email %></p>
-</div>
-<div class="btn btn-xs btn-primary">New Article</div>
 
-<% if @user_articles.length > 0 %>
-  <%= render  "articles/article", obj: @user_articles %>
-<% else %>
-  <p>Sorry, you do not have any articles yet! Click on the <strong>New Article</strong> button above.</p>
-<% end %>
-<div align="center"><%= will_paginate @user_articles %></div>
+  <div class="dashboard-tab__menu">
+    <p id="posts" class="menu__items active">Posts</p>
+    <p id="followers" class="menu__items">Followers</p>
+    <p id="following" class="menu__items">Following</p>
+  </div>
+
+  <div class="dashboard-tab">
+    <div class="main-posts">
+        <% if @user_articles.length > 0 %>
+          <%= render  "articles/article", obj: @user_articles %>
+        <% else %>
+          <p>Sorry, you do not have any articles yet! Click on the <strong>New Article</strong> button above.</p>
+        <% end %>
+      <div align="center"><%= will_paginate @user_articles %></div>
+    </div>
+
+    <div class="main-followers">
+      <p>You have no followers yet :,(</p>
+    </div>
+
+    <div class="main-following">
+      <p>You are currently not following anyone...</p>
+    </div>
+  </div>
+</div>
+
+

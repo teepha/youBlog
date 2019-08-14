@@ -2,13 +2,14 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import url("https://fonts.googleapis.com/css?family=Berkshire+Swash|Josefin+Sans:400,600|Sofia&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash|Josefin+Sans:400,700|Montserrat|Sofia&display=swap');
 
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   font-family: "Josefin Sans", sans-serif;
+  color: #546e7a;
 }
 
 .navbar-default {
@@ -135,30 +136,6 @@ body {
   background-color: black;
 }
 
-.article-meta-details {
-  border-top: 1px solid #eaeaea;
-  margin-top: 15px;
-}
-
-.article-actions {
-  border-top: 1px solid #eaeaea;
-  padding-top: 10px;
-}
-
-.description {
-  margin-top: 0;
-}
-
-.article-title {
-  font-weight: bold;
-  font-size: 1.5em;
-}
-
-.article-body {
-  border-top: 1px solid #eaeaea;
-  padding: 15px 0;
-}
-
 .listing {
   list-style: none;
   padding-left: 10px;
@@ -174,21 +151,14 @@ body {
   }
 }
 
-.user-image {
-  position: relative;
-  margin: 3rem auto 1rem;
-}
 
 footer {
-  // margin-top: 20px;
-  // padding: 5px auto;
   background-color: #001935;
   display: flex;
   justify-content: center;
   align-content: center;
   margin: 0;
   padding: 0;
-  /* height: 45px; */
 
   .container {
     display: flex;
@@ -210,13 +180,11 @@ footer {
         color: #ffffff;
         font-size: 18px;
         font-weight: bold;
-        // padding: 0 1rem;
       }
 
       p {
         color: #ffffff;
         font-size: 1rem;
-        // margin: 1rem 0;
         padding: 0 1rem;
         grid-column: span 3;
       }

@@ -24,4 +24,23 @@ $(document).ready(function() {
   $(".fa-search").hover(function() {
     $(".form-group").show();
   });
+
+  $(".main-posts").show();
+
+  $(".menu__items").click(function() {
+    $(".menu__items").removeClass("active");
+    $(this).addClass("active");
+
+    $(".main-posts").hide();
+    $(".main-followers").hide();
+    $(".main-following").hide();
+
+    if ($(this).prop("id") == "posts") {
+      $(".main-posts").show();
+    } else if ($(this).prop("id") == "followers") {
+      $(".main-followers").show();
+    } else if ($(this).prop("id") == "following") {
+      $(".main-following").show();
+    }
+  });
 });

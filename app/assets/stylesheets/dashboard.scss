@@ -1,0 +1,196 @@
+#main-dashboard {
+  display: grid;
+  grid-template-rows: 55px 212px 45px auto;
+  flex: 1;
+
+  .container-fluid {
+    width: 100%;
+    padding: 0;
+    margin: 55px auto auto;
+    padding: 1rem 0;
+    background: #f5f9fd;
+
+    .profile-info {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-gap: 21px;
+      padding: 21px;
+      width: 100%;
+      margin: 0 auto;
+      align-items: center;
+
+      .profile-info__content {
+        h2 {
+          text-transform: capitalize;
+          font-weight: bold;
+          font-size: 32px;
+          color: #000000;
+        }
+
+        p {
+          font-size: 14px;
+          color: #000000;
+        }
+
+        .profile-info__action {
+          border: 0.75px solid #ff7a00;
+          border-radius: 5px;
+          padding: 0.6rem 1rem;
+          cursor: pointer;
+          outline: none;
+          color: #ff7a00;
+
+          &:hover {
+            text-decoration: none;
+            background-color: #ff7a00;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+
+  .dashboard-tab__menu {
+    grid-row: 3/4;
+    background-color: #001935;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    height: 45px;
+
+    p {
+      color: #ffffff;
+      align-self: center;
+      margin: 0 32px;
+      padding: 5px 7px;
+      cursor: pointer;
+    }
+    .active {
+      border-bottom: 3px solid #ff7a00;
+      padding: 13px 7px 8px;
+    }
+  }
+
+  .dashboard-tab {
+    grid-row: 4/5;
+    margin: 40px 160px auto;
+    display: flex;
+    flex: 1;
+
+    .main-posts {
+      display: grid;
+      grid-template-columns: repeat(2, 45%);
+      grid-gap: 30px;
+      justify-content: center;
+
+      .article_wrapper {
+        // width: 40%;
+
+        .article {
+          background: #ffffff;
+          box-shadow: 0px 10px 50px 0px rgba(84, 110, 122, 0.15);
+          padding: 24px;
+          border: 1px solid #eaeaea;
+          border-radius: 4px;
+
+          .article-title {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1.5em;
+            color: #263238;
+          }
+
+          .seperator {
+            background: #263238;
+            width: 100px;
+            height: 2px;
+            margin: 0 0 1rem;
+            border: none;
+          }
+
+          .article-meta-details {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            small {
+              font-size: 12px;
+            }
+
+            .article-username {
+              text-transform: capitalize;
+            }
+          }
+
+          .article-body {
+            min-height: 50px;
+
+            p {
+              font-family: "Montserrat", sans-serif;
+              color: #263238;
+              margin: 16px 0;
+            }
+          }
+
+          .article-category {
+            margin: 10px 0;
+
+            span {
+              background: whitesmoke;
+              padding: 5px 8px;
+              margin: 0 0.5rem 0 0;
+
+              a {
+                font-size: 12px;
+                text-transform: uppercase;
+                color: #546e7a;
+                margin-top: 10px;
+              }
+            }
+          }
+
+          .article-actions {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 3px;
+
+            span {
+              a {
+                font-size: 12px;
+                text-transform: uppercase;
+                color: #263238;
+              }
+            }
+          }
+
+          .description {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+
+    .main-followers,
+    .main-following {
+      display: none;
+      width: 100%;
+
+      p {
+        text-align: center;
+        color: #263238;
+      }
+    }
+
+  }
+}
+
+@media (min-width: 1200px) {
+  #main-dashboard {
+    .dashboard-tab {
+      .main-posts {
+        grid-template-columns: repeat(2, 40%);
+      }
+    }
+  }
+}
