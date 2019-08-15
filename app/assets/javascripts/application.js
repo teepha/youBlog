@@ -47,4 +47,12 @@ $(document).ready(function() {
       $(".main-following").show();
     }
   });
+
+  // Side toolbar for new article
+  $(".side-toolbar__button").click(function() {
+    
+    $(".side-toolbar__button").toggleClass("active");
+    $(".add-article-image").toggleClass("active");
+    $(".ql-editor p").toggle();
+  });
 });

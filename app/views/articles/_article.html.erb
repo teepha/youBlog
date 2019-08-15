@@ -8,7 +8,7 @@
           <small><%= time_ago_in_words(article.created_at) %> ago</small>
         </div>
         <div class="article-body">
-          <p><%= truncate(article.description, length: 80) %></p>
+          <p><%= sanitize article.description.truncate(80) %></p>
         </div>
         <div class="article-category">
           <% if article.categories.any? %>

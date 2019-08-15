@@ -1,4 +1,5 @@
-#main-new-article {
+#main-new-article,
+#main-edit-article {
   padding: 0;
   flex: 1;
   width: 100%;
@@ -10,7 +11,11 @@
     flex-direction: column;
     align-items: center;
 
-    .new-article__heading {
+    .new-article__heading,
+    .edit-article__heading {
+      align-self: flex-start;
+      margin-left: 48px;
+
       h2 {
         margin-bottom: 0;
       }
@@ -24,11 +29,8 @@
       }
     }
 
-    .new-article__wrapper {
+    .article-editor__wrapper {
       .new-article {
-        // .new-article__actions {
-        // }
-
         #article_title {
           width: 100%;
           border: none;
@@ -36,23 +38,26 @@
           margin: 1rem 0;
           padding: 1rem;
           background: #ffffff;
-          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+          border: 1px solid #f2711c;
+          box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.25);
           border-radius: 5px;
         }
 
         .ql-toolbar {
-          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+          border: 1px solid #f2711c !important;
+          box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.25);
           border-radius: 5px 5px 2px 2px;
           border: none;
         }
 
         .article_description-quill {
+          border: 1px solid #f2711c;
           height: 400px;
           outline: none;
           margin: 1rem 0;
           padding: 12px;
           background: #ffffff;
-          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.25);
           border-radius: 5px;
 
           .ql-editor {
@@ -66,11 +71,12 @@
 
         .side-toolbar {
           position: absolute;
-          top: 220px;
+          top: 198px;
           left: 60px;
 
           .side-toolbar__button {
             background: none;
+            outline: none;
             border: 1px solid #5b5b5b;
             color: #6d6d6d;
             cursor: pointer;
@@ -82,6 +88,69 @@
             margin-right: 2px;
             text-align: center;
             transition: all 0.2s ease;
+          }
+
+          .active {
+            transform: rotate(45deg);
+          }
+        }
+
+        .add-article-image {
+          position: absolute;
+          padding: 10px 16px 6px;
+          top: 196px;
+          left: 96px;
+          display: none;
+          background: transparent;
+          cursor: pointer;
+          color: rgba(0, 0, 0, 0.6);
+          border-radius: 4px;
+          outline: 0;
+          border: none;
+          box-shadow: 0 0 0 1px rgba(34, 36, 38, 0.15) inset;
+
+          i {
+            font-size: 18px;
+          }
+        }
+        .active {
+          display: inline-block;
+        }
+
+        .input_checkbox {
+          .checkbox {
+            border: 1px solid #f2711c;
+            border-radius: 0.2rem;
+            background: #fff;
+            width: 1rem;
+            height: 1rem;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+          }
+
+          .checkbox:checked {
+            background: #f2711c;
+            border: #777;
+            outline: none;
+          }
+        }
+
+        .new-article__actions {
+          text-align: right;
+          margin: 16px 48px;
+          color: #f2711c;
+
+          input[type="submit"] {
+            border: 1px solid #f2711c;
+            border-radius: 4px;
+            padding: 5px 10px 3px;
+
+            &:hover {
+              background: #f2711c;
+              color: white;
+              padding: 8px 12px 6px;
+            }
           }
         }
       }
