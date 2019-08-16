@@ -7,15 +7,17 @@
 
   .container-wrapper {
     position: relative;
-    margin: 100px 80px 0;
+    margin: 100px 16px 0;
 
     .category-listing__heading {
       align-self: flex-start;
-      margin: 24px 0 32px 32px;
+      margin: 32px 0 24px 12px;
+      // margin: 24px 0 32px 32px;
 
       h2 {
         margin: 0;
         color: #263238;
+        font-size: 24px;
       }
 
       .seperator {
@@ -52,7 +54,7 @@
 
     .category__listing {
       display: grid;
-      grid-template-columns: repeat(4, 22%);
+      grid-template-columns: repeat(1, 96%);
       grid-template-rows: auto auto auto auto;
       align-items: center;
       justify-content: center;
@@ -89,6 +91,90 @@
             }
           }
         }
+      }
+    }
+  }
+}
+
+@media (min-width: 432px) {
+  #main-category-listing {
+    .container-wrapper {
+      margin: 100px 30px 0;
+
+      .category-listing__heading {
+        h2 {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 544px) {
+  #main-category-listing {
+    .container-wrapper {
+      margin: 100px 30px 0;
+    }
+  }
+}
+
+@media (min-width: 640px) {
+  #main-category-listing {
+    .container-wrapper {
+      .category__listing {
+        grid-template-columns: repeat(2, 45%);
+      }
+
+      .category-listing__heading {
+        margin: 40px 0 32px 32px;
+
+        h2 {
+          font-size: 32px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  #main-category-listing {
+    .container-wrapper {
+      margin: 100px 46px 0;
+
+      .category-listing__heading {
+        margin: 0 0 32px 32px;
+      }
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  #main-category-listing {
+    .container-wrapper {
+      margin: 100px 60px 0;
+
+      .category__listing {
+        grid-template-columns: repeat(3, 30%);
+
+        .category-wrapper {
+          .no-decoration {
+            .category-content {
+              padding: 24px 20px 32px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1104px) {
+  #main-category-listing {
+    .container-wrapper {
+      margin: 100px 80px 0;
+
+      .category-listing__heading {
+        margin: 0 0 32px 48px;
       }
     }
   }
