@@ -19,17 +19,13 @@
     <% else %>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <% if current_page?(root_path) || current_page?(articles_path) %>
+          <% if current_page?(root_path)%>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories<span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><%= link_to "All Categories", categories_path %></li>
                 <% Category.all.each do |category| %>
                   <li><%= link_to  "#{category.name.capitalize}", category_path(category) %></li>
-                <% end %>
-                <% if logged_in? and current_user.admin? %>
-                  <li role="separator" class="divider"></li>
-                  <li><%= link_to "New Category", new_category_path %></li>
                 <% end %>
               </ul>
             </li>
@@ -54,9 +50,9 @@
               <ul class="dropdown-menu">
                 <li><%= link_to 'Home', articles_path %></li>
                 <li><%= link_to 'Authors', users_path %></li>
+                <li><%= link_to "Categories", categories_path %></li>
                 <li><%= link_to "Write a post", new_article_path %></li>
                 <li><%= link_to "My Profile", user_path(current_user) %></li>
-                <li><a href="#">Bookmarks</a></li>
                 <li role="separator" class="divider"></li>
                 <li><%= link_to "LogOut", logout_path, method: :delete %></li>
               </ul>

@@ -24,15 +24,16 @@
   </div>
 
   <div class="dashboard-tab">
-    <div class="main-posts">
+    <div class="main-posts__wrapper">
+      <div class="main-posts">
         <% if @user_articles.length > 0 %>
           <%= render  "articles/article", obj: @user_articles %>
         <% else %>
           <p>Sorry, you do not have any articles yet!</p>
         <% end %>
+      </div>
       <div align="center"><%= will_paginate @user_articles %></div>
     </div>
-
     <div class="main-followers">
       <p>You have no followers yet :,(</p>
     </div>

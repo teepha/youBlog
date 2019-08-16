@@ -14,7 +14,6 @@
     .new-article__heading,
     .edit-article__heading {
       align-self: flex-start;
-      margin-left: 48px;
 
       h2 {
         margin-bottom: 0;
@@ -24,7 +23,7 @@
         background: #777;
         width: 100px;
         height: 2px;
-        margin: 0 0 1rem;
+        margin: 0 0 16px;
         border: none;
       }
     }
@@ -71,8 +70,8 @@
 
         .side-toolbar {
           position: absolute;
-          top: 198px;
-          left: 60px;
+          top: 202px;
+          left: 16px;
 
           .side-toolbar__button {
             background: none;
@@ -98,8 +97,8 @@
         .add-article-image {
           position: absolute;
           padding: 10px 16px 6px;
-          top: 196px;
-          left: 96px;
+          top: 200px;
+          left: 56px;
           display: none;
           background: transparent;
           cursor: pointer;

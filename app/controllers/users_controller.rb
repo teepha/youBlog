@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user_articles = @user.articles.paginate(page: params[:page], per_page: 8)
+    @user_articles = @user.articles.paginate(page: params[:page], per_page: 6)
   end
 
   def destroy
