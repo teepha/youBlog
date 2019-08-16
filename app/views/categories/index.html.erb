@@ -3,7 +3,6 @@
     <div class="category-listing__heading">
       <h2>Featured Categories</h2>
       <div class="seperator"></div>
-      
     </div>
     <% if logged_in? and current_user.admin? %>
         <div class="new-category"><%= link_to "Create", new_category_path %></div>

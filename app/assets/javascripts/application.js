@@ -29,18 +29,18 @@ $(document).ready(function() {
   });
 
   // Profile page
-  $(".main-posts").show();
+  $(".main-posts__wrapper").show();
 
   $(".menu__items").click(function() {
     $(".menu__items").removeClass("active");
     $(this).addClass("active");
 
-    $(".main-posts").hide();
+    $(".main-posts__wrapper").hide();
     $(".main-followers").hide();
     $(".main-following").hide();
 
     if ($(this).prop("id") == "posts") {
-      $(".main-posts").show();
+      $(".main-posts__wrapper").show();
     } else if ($(this).prop("id") == "followers") {
       $(".main-followers").show();
     } else if ($(this).prop("id") == "following") {

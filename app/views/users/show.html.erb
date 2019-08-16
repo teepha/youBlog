@@ -6,11 +6,20 @@
           <%= gravatar_for @user, size:150 %>
         </div>
         <div class="profile-info__content">
-          <h2 align=center><%= @user.username %>'s page</h2>
+          <h2 align=center><%= @user.username.capitalize %>'s page</h2>
           <p><%= @user.email %></p>
           <p>Description- hard code. Change this later.</p>
           <div>
-            <%= link_to "Edit Profile", edit_user_path(current_user), class: "profile-info__action", type: "button" %>
+            <% if current_user == @user %>
+              <%= link_to "Edit Profile", edit_user_path(current_user), class: "profile-info__action", type: "button" %>
+            <% else %>
+              <a href="#" class="profile-info__action" type="button">Follow</a>
+              <%  if logged_in? && current_user.admin? %>
+                <%= link_to  "Delete", user_path(@user), method: :delete,
+                    data: {confirm: "Are you sure you want to delete?"}, 
+                    class: "profile-info__action" , type: "button" %>
+              <% end %>
+            <% end %>
           </div>
         </div>
       </div>
@@ -29,17 +38,29 @@
         <% if @user_articles.length > 0 %>
           <%= render  "articles/article", obj: @user_articles %>
         <% else %>
-          <p>Sorry, you do not have any articles yet!</p>
+          <% if current_user == @user %>
+            <p>Sorry, you do not have any articles yet!</p>
+          <% else %>
+            <p>Sorry, this user does not have any articles yet!</p>
+          <% end %>
         <% end %>
       </div>
       <div align="center"><%= will_paginate @user_articles %></div>
     </div>
     <div class="main-followers">
-      <p>You have no followers yet :,(</p>
+      <% if current_user == @user %>
+        <p>You have no followers yet :,(</p>
+      <% else %>
+        <p>This user has no followers yet :,(</p>
+      <% end %>
     </div>
 
     <div class="main-following">
-      <p>You are currently not following anyone...</p>
+      <% if current_user == @user %>
+        <p>You are currently not following anyone...</p>
+      <% else %>
+        <p>This user is currently not following anyone...</p>
+      <% end %>
     </div>
   </div>
 </div>

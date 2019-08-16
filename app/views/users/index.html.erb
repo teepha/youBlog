@@ -1,21 +1,29 @@
-<h1 align="center">All youBloggers</h1>
-<div align="center">
-  <% @users.each do |user| %>
-    <ul class="listing">
-      <div class="row">
-        <div class="well col-md-2 col-md-offset-5">
-          <li><%= link_to gravatar_for(user), user_path(user) %></li>
-          <li class="article-title">
-            <%= link_to user.username, user_path(user) %>
-          </li>
-          <li><small><%= pluralize(user.articles.count, "article") if user.articles %></small></li>
-          <%  if logged_in? && current_user.admin? %>
-            <li><%= link_to  "Delete", user_path(user), method: :delete,
-                  data: {confirm: "Are you sure you want to delete?"} %></li>
+<div id="main-bloggers-listing">
+  <div class="container-wrapper">
+    <div class="bloggers-listing__heading">
+      <h2>Featured Bloggers</h2>
+      <div class="seperator"></div>
+    </div>
+    <div class="bloggers__listing">
+      <% @users.each do |user| %>
+        <div class="blogger-wrapper">
+          <%= link_to user_path(user), class: "no-decoration" do %>
+            <div class="blogger-info">
+              <div class="blogger__image">
+                <%= gravatar_for(user) %>
+              </div>
+              <p class="blogger__name"><%= user.username.capitalize %></p>
+              <p class="blogger__articles"><%= pluralize(user.articles.count, "article") if user.articles %></p>
+            </div> 
           <% end %>
+          
         </div>
-      </div>
-    </ul>
-  <% end %>
-  <%= will_paginate %>
+        
+      <% end %>
+    </div>
+  </div>
+  <div  align="center">
+    <%= will_paginate %>
+  </div>
 </div>
+
