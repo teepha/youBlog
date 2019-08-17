@@ -6,9 +6,9 @@
           <%= gravatar_for @user, size:150 %>
         </div>
         <div class="profile-info__content">
-          <h2 align=center><%= @user.username.capitalize %>'s page</h2>
-          <p><%= @user.email %></p>
-          <p>Description- hard code. Change this later.</p>
+          <h2><%= @user.username.capitalize %>'s page</h2>
+          <small class="user-email"><%= @user.email %></small>
+          <p class="user-bio"><%= @user.biography.capitalize if @user.biography %></p>
           <div>
             <% if current_user == @user %>
               <%= link_to "Edit Profile", edit_user_path(current_user), class: "profile-info__action", type: "button" %>

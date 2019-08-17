@@ -15,6 +15,16 @@
           <%= f.email_field :email, class: "form-control", placeholder: "Email Address" %>
         </div>
       </div>
+
+      <% if logged_in? && current_page?(edit_user_path(current_user)) %>
+        <div class="form-group">
+          <div class="col-sm-6">
+            <span class="fas fa-pencil-alt"></span>
+            <%= f.text_area :biography, class: "form-control", placeholder: "Tell us about yourself..." %>
+          </div>
+        </div>
+      <% end %>
+     
       <div class="form-group">
         <div class="col-sm-6">
           <span class="fas fa-lock"></span>

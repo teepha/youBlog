@@ -1,40 +1,48 @@
 #main-dashboard {
   display: grid;
-  grid-template-rows: 55px 212px 45px auto;
+  grid-template-rows: 54px 212px 45px auto;
   flex: 1;
 
   .container-fluid {
     width: 100%;
     padding: 0;
     margin: 55px auto auto;
-    padding: 1rem 0;
+    padding: 16px 0 30px;
     background: #f5f9fd;
 
     .profile-info {
       display: grid;
-      grid-template-columns: auto 1fr;
-      grid-gap: 21px;
-      padding: 21px;
+      grid-template-columns: 150px 420px;
+      grid-gap: 24px;
       width: 100%;
       margin: 0 auto;
       align-items: center;
+      justify-content: center;
 
       .profile-info__content {
+        max-width: 420px;
+
         h2 {
           font-weight: bold;
           font-size: 32px;
           color: #263238;
+          margin-top: 16px;
+          margin-bottom: 8px;
         }
 
         p {
-          font-size: 14px;
           color: #263238;
+        }
+
+        .user-bio {
+          font-size: 14px;
+          margin: 4px 0 18px;
         }
 
         .profile-info__action {
           border: 0.75px solid #ff7a00;
           border-radius: 5px;
-          padding: 0.6rem 1rem;
+          padding: 8px 12px;
           cursor: pointer;
           text-decoration: none;
           outline: none;
