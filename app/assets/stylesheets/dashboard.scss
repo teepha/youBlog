@@ -7,7 +7,7 @@
     width: 100%;
     padding: 0;
     margin: 55px auto auto;
-    padding: 16px 0 30px;
+    padding: 18px 0 36px;
     background: #f5f9fd;
 
     .profile-info {
@@ -36,7 +36,7 @@
 
         .user-bio {
           font-size: 14px;
-          margin: 4px 0 18px;
+          min-height: 50px;
         }
 
         .profile-info__action {
