@@ -1,7 +1,7 @@
 #main-signup {
   flex: 1;
   background: linear-gradient(rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.66)),
-    url("signup.jpg") center/cover;
+    asset-url("signup.jpg") center/cover;
 
   .container-fluid {
     padding: 0;
