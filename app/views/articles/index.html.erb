@@ -1,8 +1,18 @@
-<h1 align="center">Listing all articles</h1>
-<% if logged_in? %>
-  <%= link_to "New Article", new_article_path(@article), class: "btn btn-xs btn-primary" %>
-<% end %>
-<%= render  "article", obj: @articles %>
-<div align="center">
-  <%= will_paginate %>
+<div id="main-articles-listing">
+  <div class="container-wrapper">
+    <div class="articles-listing__heading">
+      <h2>Featured Articles</h2>
+      <div class="seperator"></div>
+    </div>
+    <% if logged_in? %>
+      <%= link_to "New Article", new_article_path(@article), class: "btn btn-xs btn-primary" %>
+    <% end %>
+    <div class="category__listing">
+      <%= render  "article", obj: @articles %>
+    </div>
+  </div>
+  <div  align="center">
+    <%= will_paginate %>
+  </div>
 </div>
+
