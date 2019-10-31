@@ -109,11 +109,11 @@
               text-transform: uppercase;
               font-weight: bold;
               font-size: 1.5em;
-              color: #263238;
+              color: #434e55;
             }
 
             .seperator {
-              background: #263238;
+              background: #434e55;
               width: 100px;
               height: 2px;
               margin: 0 0 1rem;
@@ -127,6 +127,7 @@
 
               small {
                 font-size: 12px;
+                color: #434e558f;
               }
 
               .article-username {
@@ -139,7 +140,7 @@
 
               p {
                 font-family: "Montserrat", sans-serif;
-                color: #263238;
+                color: #434e55;
                 margin: 16px 0;
               }
             }
@@ -150,6 +151,7 @@
 
               .item-category {
                 background: whitesmoke;
+                border-radius: 16px;
                 padding: 6px 8px;
                 margin: 0 3px 0 0;
 
@@ -157,7 +159,7 @@
                   font-size: 12px;
                   text-transform: uppercase;
                   letter-spacing: -1px;
-                  color: #546e7a;
+                  color: #ff7a00;
                   margin-top: 10px;
                 }
 
@@ -178,7 +180,11 @@
                 a {
                   font-size: 12px;
                   text-transform: uppercase;
-                  color: #263238;
+                  color: #434e55;
+
+                  &:hover {
+                    color: #ff7a00;
+                  }
                 }
               }
             }

@@ -59,8 +59,10 @@
               </ul>
             </li>
           <% else %>
-            <span><%= link_to "Log in", login_path %></span>
-            <span><%= link_to "Sign Up", signup_path %></span>
+            <li><%= link_to 'Bloggers', users_path, class: "bloggers__link" %></li>
+            <li><%= link_to "Categories", categories_path, class: "categories__link" %></li>
+            <li><%= link_to "Login", login_path, class: "login__link" %></li>
+            <li><%= link_to "SignUp", signup_path, class: "signup__link" %></li>
           <% end %>
         </ul>
       </div><!-- /.navbar-collapse -->

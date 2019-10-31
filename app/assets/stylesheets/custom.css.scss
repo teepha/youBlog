@@ -9,7 +9,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   font-family: "Josefin Sans", sans-serif;
-  color: #546e7a;
+  color: #434e55;
 }
 
 .navbar-default {
@@ -70,13 +70,13 @@ body {
     z-index: 1000;
 
     .navbar-brand {
-      color: #001935;
+      color: #434e55;
       font-family: "Berkshire Swash", cursive;
       font-size: 24px;
     }
 
     .collapse {
-      margin-left: 50%;
+      margin-left: 35%;
       display: flex !important;
 
       .navbar-search-bar {
@@ -95,7 +95,7 @@ body {
           border: none;
 
           .fa-search {
-            color: #001935;
+            color: #434e55;
             font-size: 16px;
           }
         }
@@ -105,9 +105,13 @@ body {
         li {
           a {
             i {
-              color: #001935;
+              color: #434e55;
               font-size: 18px;
             }
+          }
+
+          .fa-user-shield, .fa-user, .caret {
+            color: #ff7a00;
           }
 
           .dropdown-menu {
@@ -127,6 +131,14 @@ body {
               margin: 0;
             }
           }
+        }
+
+        .bloggers__link,
+        .categories__link,
+        .login__link,
+        .signup__link {
+          color: #434e55;
+          font-size: 16px;
         }
       }
     }

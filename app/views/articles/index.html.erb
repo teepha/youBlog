@@ -1,13 +1,32 @@
 <div id="main-articles-listing">
   <div class="container-wrapper">
+    <div class="articles-listing-textbox">
+      <div class="articles-textbox">
+        <h1 class="textbox-primary">
+          <span class="textbox-primary--main">Welcome to youBlog</span>
+          <span class="textbox-primary--sub">
+            <% if logged_in? %>
+              Our goal is to put news where it earns attention, where readers can 
+              access it on every device and interact with it. We're meeting our 
+              clients' audiences where they are instead of asking them to come to us.
+            <% else %>
+              where like-minded authors share inspiration and innovation. If you have 
+              thoughts to share that you want to impact or influence people with - 
+              beyond just your friends and beyond 140 characters, here is the place!
+            <% end %>
+          </span>
+        </h1>
+        <%= link_to  "Get Started", signup_path, class: "textbox-btn" if !logged_in? %>
+      </div>
+      <div class="articles-textbox-image">
+        <%= image_tag  "celebrate-celebration-communication-296878.jpg" %>
+      </div>
+    </div>
     <div class="articles-listing__heading">
-      <h2>Featured Articles</h2>
+      <h2 class="heading-primary">Featured Blog Posts</h2>
       <div class="seperator"></div>
     </div>
-    <% if logged_in? %>
-      <%= link_to "New Article", new_article_path(@article), class: "btn btn-xs btn-primary" %>
-    <% end %>
-    <div class="category__listing">
+    <div class="article__listing">
       <%= render  "article", obj: @articles %>
     </div>
   </div>
@@ -15,4 +34,3 @@
     <%= will_paginate %>
   </div>
 </div>
-

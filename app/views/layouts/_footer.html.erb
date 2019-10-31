@@ -1,5 +1,4 @@
-<% if logged_in? %>
-  
+<% unless current_page?(signup_path) || current_page?(login_path) %>
   <footer class="footer">
     <div class="container">
       <div class="footer-link">
@@ -13,5 +12,4 @@
       </div>
     </div>
   </footer>
-  
-<% end %>
+<% end %> 
