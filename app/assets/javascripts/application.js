@@ -55,4 +55,17 @@ $(document).on('turbolinks:load', function() {
     $(".add-article-image").toggleClass("active");
     $(".ql-editor p").toggle();
   });
+
+
+  // Category Modal
+  $(".new-category .new-category__btn").click(function () {
+    $("#create-new-category-modal").show();
+    $(".new-category-modal-overlay").show();
+  })
+
+  $("#new-category-close").click(function () {
+    $("#create-new-category-modal").hide();
+    $(".new-category-modal-overlay").hide();
+  })
+
 });
