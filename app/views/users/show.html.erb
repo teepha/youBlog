@@ -36,12 +36,18 @@
     <div class="main-posts__wrapper">
       <div class="main-posts">
         <% if @user_articles.length > 0 %>
-          <%= render  "articles/article", obj: @user_articles %>
+          <div class="articles-grid">
+            <%= render  "articles/article", obj: @user_articles %>
+          </div>
         <% else %>
           <% if current_user == @user %>
-            <p>Sorry, you do not have any articles yet!</p>
+            <div class="no-articles">
+              <p>Sorry, you do not have any articles yet!</p>
+            </div>
           <% else %>
-            <p>Sorry, this user does not have any articles yet!</p>
+            <div class="no-articles">
+              <p>Sorry, this user does not have any articles yet!</p>
+            </div>
           <% end %>
         <% end %>
       </div>
