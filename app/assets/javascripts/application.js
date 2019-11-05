@@ -75,4 +75,15 @@ $(document).on("turbolinks:load", function() {
     $("#edit-category-modal").hide();
     $(".category-modal-overlay").hide();
   });
+
+  // Profile Modal
+  $(".profile-info__content .edit-btn").click(function() {
+    $("#update-profile-modal").show();
+    $(".update-profile-modal-overlay").show();
+  });
+
+  $(".modal-close-button #btn-close").click(function() {
+    $("#update-profile-modal").hide();
+    $(".update-profile-modal-overlay").hide();
+  });
 });

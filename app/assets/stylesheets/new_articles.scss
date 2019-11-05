@@ -60,60 +60,10 @@
           border-radius: 5px;
 
           .ql-editor {
-            padding: 15px 30px;
-
             p {
               font-family: "Josefin Sans", sans-serif;
             }
           }
-        }
-
-        .side-toolbar {
-          position: absolute;
-          top: 202px;
-          left: 16px;
-
-          .side-toolbar__button {
-            background: none;
-            outline: none;
-            border: 1px solid #5b5b5b;
-            color: #6d6d6d;
-            cursor: pointer;
-            height: 30px;
-            width: 30px;
-            border-radius: 15px;
-            font-weight: 700;
-            font-size: 20px;
-            margin-right: 2px;
-            text-align: center;
-            transition: all 0.2s ease;
-          }
-
-          .active {
-            transform: rotate(45deg);
-          }
-        }
-
-        .add-article-image {
-          position: absolute;
-          padding: 10px 16px 6px;
-          top: 200px;
-          left: 56px;
-          display: none;
-          background: transparent;
-          cursor: pointer;
-          color: rgba(0, 0, 0, 0.6);
-          border-radius: 4px;
-          outline: 0;
-          border: none;
-          box-shadow: 0 0 0 1px rgba(34, 36, 38, 0.15) inset;
-
-          i {
-            font-size: 18px;
-          }
-        }
-        .active {
-          display: inline-block;
         }
 
         .input_checkbox {

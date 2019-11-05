@@ -4,16 +4,6 @@
     <%= form_for(@article, :html => {class: "new-article", role: "form"}) do |f| %>
       <%= f.text_field :title, placeholder: "Title please...", autofocus: true %>
       <%= f.text_area :description, rows: 10, placeholder: "Share your story...", class: 'quill_container' %>
-      <div class="side-toolbar">
-        <button class="side-toolbar__button" type="button">
-          <svg viewBox="0 0 8 8" height="14" width="14"><path d="M3 0v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2z"></path></svg>
-        </button>
-      </div>
-      <div>
-        <button type="button" class="add-article-image" title="Add image">
-          <i class="fas fa-camera"></i><input type="file" accept="image/*" style="display: none;">
-        </button>
-      </div>
       
       <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
         <% cb.label(class: "checkbox-inline input_checkbox") {cb.check_box(class: "checkbox") + cb.text.capitalize} %>
