@@ -20,7 +20,7 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).on('turbolinks:load', function() {
+$(document).on("turbolinks:load", function() {
   // Navbar search bar
   $(".navbar-search-bar input").hide();
 
@@ -50,22 +50,29 @@ $(document).on('turbolinks:load', function() {
 
   // Side toolbar for new article
   $(".side-toolbar__button").click(function() {
-    
     $(".side-toolbar__button").toggleClass("active");
     $(".add-article-image").toggleClass("active");
     $(".ql-editor p").toggle();
   });
 
-
   // Category Modal
-  $(".new-category .new-category__btn").click(function () {
+  $(".new-category .new-category__btn").click(function() {
     $("#create-new-category-modal").show();
-    $(".new-category-modal-overlay").show();
-  })
+    $(".category-modal-overlay").show();
+  });
 
-  $("#new-category-close").click(function () {
+  $("#new-category-close").click(function() {
     $("#create-new-category-modal").hide();
-    $(".new-category-modal-overlay").hide();
-  })
+    $(".category-modal-overlay").hide();
+  });
 
+  $(".edit-item-category .edit-category__btn").click(function() {
+    $("#edit-category-modal").show();
+    $(".category-modal-overlay").show();
+  });
+
+  $("#edit-category-close").click(function() {
+    $("#edit-category-modal").hide();
+    $(".category-modal-overlay").hide();
+  });
 });
