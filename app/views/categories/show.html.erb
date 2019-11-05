@@ -1,16 +1,27 @@
-<h1 align="center" class="category-heading"><%= @category.name %></h1>
-<div align="center">
-  <% if logged_in? and current_user.admin? %>
-    <div class="edit-item-category">
-      <span class="edit-category__btn">
-        Edit Category
-      </span>
+<div id="main-category-articles-listing">
+  <div class="container-wrapper">
+    <div class="listing__heading">
+      <h2 class="listing-header"><%= @category.name %></h2>
+      <div class="seperator"></div>
     </div>
-  <% end %>
-</div>
-<%= render  "articles/article", obj: @category_articles %>
-<div align="center">
-  <%= will_paginate @category_articles %>
+    <% if logged_in? and current_user.admin? %>
+      <div class="edit-item-category">
+        <span class="edit-category__btn">Edit Category</span>
+      </div>
+    <% end %>
+    <% if @category_articles.empty? %>
+      <div class="empty-articles__list">
+        Sorry, there are currently no articles in this category!
+      </div>
+    <% else %>
+      <div class="category-articles__list">
+        <%= render  "articles/article", obj: @category_articles %>
+      </div>
+    <% end %>
+    <div align="center">
+      <%= will_paginate @category_articles %>
+    </div>
+  </div>
 </div>
 
-<%= render "edit" %> 
+<%= render "edit" %>

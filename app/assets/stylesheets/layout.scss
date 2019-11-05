@@ -38,7 +38,7 @@
       margin-left: 50%;
 
       &:hover {
-        background: $color-primary-orange;
+        background: $color-orange-first;
 
         a {
           color: $color-white;
@@ -62,7 +62,7 @@
     z-index: 1000;
 
     .navbar-brand {
-      @include style-navbar-brand($color-primary-dark);
+      @include style-navbar-brand($color-grey);
     }
 
     .collapse {
@@ -76,7 +76,7 @@
         display: flex;
 
         input[type="text"] {
-          border: 1px solid $color-primary-dark;
+          border: 1px solid $color-grey;
           border-radius: 4px;
           padding: 4px 8px;
         }
@@ -85,7 +85,7 @@
           border: none;
 
           .fa-search {
-            color: $color-primary-dark;
+            color: $color-grey;
             font-size: 16px;
           }
         }
@@ -95,7 +95,7 @@
         li {
           a {
             i {
-              color: $color-primary-dark;
+              color: $color-grey;
               font-size: 18px;
             }
           }
@@ -103,7 +103,7 @@
           .fa-user-shield,
           .fa-user,
           .caret {
-            color: $color-primary-orange;
+            color: $color-orange-first;
           }
 
           .dropdown-menu {
@@ -129,7 +129,7 @@
         .categories__link,
         .login__link,
         .signup__link {
-          color: $color-primary-dark;
+          color: $color-grey;
           font-size: 16px;
         }
       }

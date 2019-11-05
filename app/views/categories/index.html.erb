@@ -5,14 +5,9 @@
       <div class="seperator"></div>
     </div>
     <% if logged_in? and current_user.admin? %>
-        <div class="new-category">
-          <span class="new-category__btn">Create</span>
-          <%
-=begin%>
- <%= link_to "Create", new_category_path %> 
-<%
-=end%>
-        </div>
+      <div class="new-category">
+        <span class="new-category__btn">Create</span>
+      </div>
     <% end %>
     <div class="category__listing">
       <% @categories.each do |category| %>
