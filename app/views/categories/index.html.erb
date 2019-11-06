@@ -15,7 +15,7 @@
           <%= link_to category_path(category), class: "no-decoration" do %>
             <div class="category-content">
               <h4><%= category.name.capitalize %></h4>
-              <span class="category-articles"><%= pluralize(category.articles.count, "article") %></span>
+              <span class="category-articles__link"><%= pluralize(category.articles.count, "article") %></span>
             </div>
           <% end %>
         </div>

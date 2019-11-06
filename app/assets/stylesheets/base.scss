@@ -1,7 +1,180 @@
+@import "variables";
+
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   font-family: "Josefin Sans", sans-serif;
-  // color: $color-grey;
+}
+
+// Category and Blogger Mixins
+@mixin style-main-container($padding) {
+  background-color: $color-dark-white;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: $padding;
+  flex: 1;
+}
+
+@mixin style-container-wrapper($margin) {
+  position: relative;
+  margin: $margin;
+}
+
+@mixin style-list-heading($margin) {
+  align-self: flex-start;
+  margin: $margin;
+}
+
+@mixin style-header($font-size) {
+  margin: 0;
+  color: $color-grey;
+  font-size: $font-size;
+}
+
+@mixin style-seperator($width) {
+  background: $color-grey;
+  width: $width;
+  height: 2px;
+  margin: 0 0 1rem;
+  border: none;
+}
+
+@mixin style-listings-grid($grid, $grid-gap) {
+  display: grid;
+  grid-template-columns: $grid;
+  grid-gap: $grid-gap;
+  justify-content: center;
+}
+
+@mixin style-listings-temp {
+  grid-template-rows: auto auto auto auto;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+}
+
+@mixin style-listing-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+@mixin style-content-background {
+  background: $color-white;
+  box-shadow: 0px 10px 50px 0px rgba(84, 110, 122, 0.15);
+  border: 1px solid $color-light-grey;
+}
+
+@mixin style-listing-content {
+  @include style-content-background;
+  position: relative;
+  padding: 24px 28px 32px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  color: $color-grey;
+}
+
+@mixin style-content-link {
+  font-size: 12px;
+  color: $color-orange-first;
+}
+
+// Modal Mixins
+@mixin style-main-modal-wrapper($width, $height) {
+  display: none;
+  z-index: 1010;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: $width;
+  max-width: 100%;
+  height: $height;
+  max-height: 100%;
+}
+
+@mixin style-modal-content($padding) {
+  border-radius: 8px;
+  text-align: center;
+  background-color: $color-white;
+  display: flex;
+  flex-direction: column;
+  padding: $padding;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+@mixin style-close-modal-btn {
+  float: right;
+  cursor: pointer;
+  min-width: 18px;
+  min-height: 18px;
+  background: url("close.svg") no-repeat;
+}
+
+@mixin style-modal-header {
+  font-size: 28px;
+  line-height: 26px;
+  padding-bottom: 14px;
+}
+
+@mixin style-modal-overlay {
+  display: none;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+// Form Mixins
+@mixin style-profile-form-horizontal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .form-group {
+    position: relative;
+    margin-bottom: 8px;
+  }
+}
+
+@mixin style-input-field($min-width, $border-radius, $height) {
+  width: 100%;
+  min-width: $min-width;
+  padding-left: 36px;
+  height: $height;
+  border-radius: $border-radius;
+  border: 1px solid $color-dark-grey;
+}
+
+@mixin style-form-icons {
+  position: absolute;
+  top: 10px;
+  left: 28px;
+}
+
+@mixin style-submit-btn($font-size, $margin-top, $opacity) {
+  color: $color-white;
+  background: $color-orange-first;
+  text-align: center;
+  font-size: $font-size;
+  padding-left: 12px;
+  outline: none;
+  border: transparent;
+  border-radius: 3px;
+  margin-top: $margin-top;
+  cursor: pointer;
+
+  &:hover {
+    background: darken($color-orange-first, $opacity);
+  }
 }

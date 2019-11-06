@@ -13,7 +13,7 @@
                 <%= gravatar_for(user) %>
               </div>
               <p class="blogger__name"><%= user.username.capitalize %></p>
-              <p class="blogger__articles"><%= pluralize(user.articles.count, "article") if user.articles %></p>
+              <p class="blogger-articles__link"><%= pluralize(user.articles.count, "article") if user.articles %></p>
             </div> 
           <% end %>
           

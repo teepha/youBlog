@@ -1,27 +1,5 @@
 @import "variables";
-
-@mixin style-header($font-size) {
-  margin: 0;
-  color: $color-grey;
-  font-size: $font-size;
-}
-
-@mixin style-seperator($width) {
-  background: $color-grey;
-  width: $width;
-  height: 2px;
-  margin: 0 0 1rem;
-  border: none;
-}
-
-@mixin style-main-container($padding) {
-  background-color: $color-dark-white;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  flex: 1;
-  padding: $padding;
-}
+@import "base";
 
 @mixin style-btn-container {
   position: absolute;
@@ -47,30 +25,15 @@
   background: $color-orange-second;
 }
 
-@mixin style-articles-listing($grid, $grid-gap) {
-  display: grid;
-  grid-template-columns: $grid;
-  grid-gap: $grid-gap;
-  justify-content: center;
-}
-
-@mixin style-background {
-  background: $color-white;
-  box-shadow: 0px 10px 50px 0px rgba(84, 110, 122, 0.15);
-  border: 1px solid $color-light-grey;
-}
-
 // All Categories
 #main-category-listing {
-  @include style-main-container(0);
+  @include style-main-container(0px);
 
   .container-wrapper {
-    position: relative;
-    margin: 100px 16px 0;
+    @include style-container-wrapper(100px 16px 30px);
 
     .category-listing__heading {
-      align-self: flex-start;
-      margin: 32px 0 24px 12px;
+      @include style-list-heading(32px 0 24px 12px);
 
       h2 {
         @include style-header(24px);
@@ -94,37 +57,25 @@
     }
 
     .category__listing {
-      @include style-articles-listing(repeat(1, 96%), 20px);
-      grid-template-rows: auto auto auto auto;
-      align-items: center;
-      flex: 1;
-      width: 100%;
+      @include style-listings-grid(repeat(1, 96%), 20px);
+      @include style-listings-temp;
 
       .category-wrapper {
-        width: 100%;
-        height: 100%;
-        position: relative;
+        @include style-listing-wrapper;
 
         .no-decoration {
           text-decoration: none;
 
           .category-content {
-            position: relative;
-            padding: 24px 28px 32px;
-            font-family: "Montserrat", sans-serif;
-            font-size: 12px;
-            text-transform: uppercase;
-            color: $color-grey;
-            @include style-background;
+            @include style-listing-content;
 
             h4 {
               font-size: 18px;
               letter-spacing: 2px;
             }
 
-            .category-articles {
-              font-size: 12px;
-              color: $color-orange-second;
+            .category-articles__link {
+              @include style-content-link;
             }
           }
         }
@@ -134,49 +85,22 @@
 }
 
 // Create and Edit Category Modals
-
 #create-new-category-modal,
 #edit-category-modal {
-  display: none;
-  z-index: 1010;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 480px;
-  max-width: 100%;
-  height: 230px;
-  max-height: 100%;
+  @include style-main-modal-wrapper(480px, 230px);
 
   .new-category-modal-content,
   .edit-category-modal-content {
-    border-radius: 8px;
-    text-align: center;
-    background-color: $color-white;
-    display: flex;
-    flex-direction: column;
-    padding: 24px 12px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
+    @include style-modal-content(20px 12px);
 
     #new-category-close,
     #edit-category-close {
-      float: right;
-      cursor: pointer;
-      min-width: 18px;
-      min-height: 18px;
-      background: url("close.svg") no-repeat;
+      @include style-close-modal-btn;
     }
 
     .new-category-header,
     .edit-category-header {
-      font-size: 28px;
-      line-height: 26px;
-      padding-bottom: 12px;
+      @include style-modal-header;
     }
 
     .category-form-content {
@@ -216,14 +140,7 @@
 }
 
 .category-modal-overlay {
-  display: none;
-  z-index: 1000;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  @include style-modal-overlay;
 }
 
 // Single Category
@@ -242,7 +159,7 @@
       }
 
       .seperator {
-        @include style-seperator(60px);
+        @include style-seperator(64px);
       }
     }
 
@@ -265,14 +182,14 @@
     }
 
     .category-articles__list {
-      @include style-articles-listing(repeat(2, 46%), 30px);
+      @include style-listings-grid(repeat(2, 46%), 30px);
 
       .article__wrapper {
         .article {
           min-height: 100%;
           padding: 24px;
           border-radius: 4px;
-          @include style-background;
+          @include style-content-background;
 
           .article-title {
             text-transform: uppercase;
@@ -282,7 +199,7 @@
           }
 
           .seperator {
-            @include style-seperator(60px);
+            @include style-seperator(64px);
           }
 
           .article-meta-details {
@@ -400,7 +317,7 @@
 @media (min-width: 768px) {
   #main-category-listing {
     .container-wrapper {
-      margin: 100px 46px 0;
+      margin: 100px 46px 30px;
 
       .category-listing__heading {
         margin: 0 0 32px 32px;
@@ -412,7 +329,7 @@
 @media (min-width: 960px) {
   #main-category-listing {
     .container-wrapper {
-      margin: 100px 60px 0;
+      margin: 100px 60px 30px;
 
       .category__listing {
         grid-template-columns: repeat(3, 30%);
@@ -432,7 +349,7 @@
 @media (min-width: 1104px) {
   #main-category-listing {
     .container-wrapper {
-      margin: 100px 80px 0;
+      margin: 100px 80px 30px;
 
       .category-listing__heading {
         margin: 0 0 32px 48px;
