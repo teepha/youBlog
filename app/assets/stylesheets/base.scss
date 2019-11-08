@@ -81,6 +81,21 @@ body {
   color: $color-orange-first;
 }
 
+@mixin style-article-meta-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  small {
+    font-size: 12px;
+    color: $color-grey;
+  }
+
+  .article-username {
+    text-transform: capitalize;
+  }
+}
+
 // Modal Mixins
 @mixin style-main-modal-wrapper($width, $height) {
   display: none;
@@ -115,7 +130,7 @@ body {
   cursor: pointer;
   min-width: 18px;
   min-height: 18px;
-  background: url("close.svg") no-repeat;
+  background: asset-url("close.svg") no-repeat;
 }
 
 @mixin style-modal-header {
