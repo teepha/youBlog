@@ -217,45 +217,11 @@
           }
 
           .article-category {
-            margin: 10px 0;
-            height: 18px;
-
-            .item-category {
-              background: $color-whitesmoke;
-              border-radius: 16px;
-              padding: 6px 8px;
-              margin: 0 3px 0 0;
-
-              a {
-                font-size: 12px;
-                text-transform: uppercase;
-                letter-spacing: -1px;
-                color: $color-orange-first;
-                margin-top: 10px;
-
-                &:hover {
-                  text-decoration: none;
-                }
-              }
-            }
+            @include style-article-categories;
           }
 
           .article-actions {
-            display: flex;
-            justify-content: space-between;
-            margin: 0 3px;
-
-            span {
-              a {
-                font-size: 12px;
-                text-transform: uppercase;
-                color: $color-grey;
-
-                &:hover {
-                  color: $color-orange-first;
-                }
-              }
-            }
+            @include style-article-actions(12px);
           }
         }
       }

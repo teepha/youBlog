@@ -7,14 +7,16 @@
 
     <div class="read-article__wrapper">
       <% if @article.user %>
-        <div class="article-meta-details">
-          <div class="article-user__details">
-            <small class="user__image"><%= link_to gravatar_for(@article.user), user_path(@article.user) %></small>
-              <div>
-                <small class="user__name">By: <%= link_to @article.user.username, user_path(@article.user) %></small>
-                <small><%= time_ago_in_words(@article.created_at) %> ago</small>
-              </div>
+        <div class="article-user__details">
+          <div class="user__image">
+            <%= link_to gravatar_for(@article.user), user_path(@article.user) %>
           </div>
+
+          <div class="user-article-time__info">
+            <small class="user-name"><i>By:</i> <%= link_to @article.user.username, user_path(@article.user) %></small>
+            <small><%= time_ago_in_words(@article.created_at) %> ago</small>
+          </div>
+
           <div class="user-follow-btn">Follow</div>
         </div>
       <% end %>
@@ -30,11 +32,16 @@
       </div>
 
       <div class="article-actions">
-        <%= link_to "Back", articles_path, class: "btn btn-xs btn-success" %>
+        <span>
+          <%= link_to '<i class="fas fa-arrow-left"></i>'.html_safe, articles_path %>
+        </span>
         <% if logged_in? && (current_user == @article.user || current_user.admin?) %>
-          <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_article_path(@article) %>
-          <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, article_path(@article), method: :delete,
-              data: {confirm: "Are you sure you want to delete?"} %>
+          <span>
+            <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_article_path(@article) %>
+            |
+            <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, article_path(@article), method: :delete,
+                data: {confirm: "Are you sure you want to delete?"} %>
+          </span>
         <% end %>
       </div>
 
