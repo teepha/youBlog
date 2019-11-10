@@ -2,13 +2,15 @@
   <div class="container" id="<%= if current_page?(signup_path) || current_page?(login_path) then 'auth-container' else 'pages-container' end %>">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
       <%= link_to 'youBlog', root_path, class: "navbar-brand" %>
+    </div>
+
+    <div class="navbar-search-bar">
+      <input type="text" class="search-bar__input" placeholder="Search">
+    </div>
+
+    <div class="navbar-toggle-btn">
+      <i class="fas fa-bars"></i>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -17,11 +19,7 @@
     <% elsif current_page?(login_path) %>
       <span><%= link_to "Sign Up", signup_path %></span>
     <% else %>
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <div class="navbar-search-bar">
-          <input type="text" class="search-bar__input" placeholder="Search">
-          <button type="submit"><i class="fas fa-search"></i></button>
-        </div>
+      <div class="main-navbar" id="main-navbar">
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
             <li><a href="#"><i class="far fa-bell"></i></a></li>
@@ -51,7 +49,27 @@
             <li><%= link_to "SignUp", signup_path, class: "signup__link" %></li>
           <% end %>
         </ul>
-      </div><!-- /.navbar-collapse -->
+      </div>
     <% end %>
   </div><!-- /.container-fluid -->
+
+  <!-- /.navbar-main-navbar -->
+    <div class="mobile-navbar">
+      <ul class="navbar__items">
+        <% if logged_in? %>
+          <li><%= link_to 'Home', articles_path %></li>
+          <li><%= link_to 'Bloggers', users_path %></li>
+          <li><%= link_to "Categories", categories_path %></li>
+          <li><%= link_to "Write a post", new_article_path %></li>
+          <li><%= link_to "My Profile", user_path(current_user) %></li>
+          <li role="separator" class="divider"></li>
+          <li><%= link_to "LogOut", logout_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to 'Bloggers', users_path, class: "bloggers__link" %></li>
+          <li><%= link_to "Categories", categories_path, class: "categories__link" %></li>
+          <li><%= link_to "Login", login_path, class: "login__link" %></li>
+          <li><%= link_to "SignUp", signup_path, class: "signup__link" %></li>
+        <% end %>
+      </ul>
+    </div>
 </nav>

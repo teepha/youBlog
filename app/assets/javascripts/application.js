@@ -21,11 +21,11 @@
 //= require_tree .
 
 $(document).on("turbolinks:load", function() {
-  // Navbar search bar
-  $(".navbar-search-bar input").hide();
+  // Navbar toggle
+  $(".mobile-navbar").hide();
 
-  $(".fa-search").hover(function() {
-    $(".navbar-search-bar input").show();
+  $(".navbar-toggle-btn").click(function() {
+    $(".mobile-navbar").toggleClass("active");
   });
 
   // Profile page

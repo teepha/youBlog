@@ -237,7 +237,8 @@
 
 // Single Artcle
 #main-read-article {
-  @include style-main-container(116px 16px 40px);
+  @include style-main-container(90px 12px 40px);
+  justify-content: center;
 
   .container-wrapper {
     @include style-container-wrapper(0);
@@ -344,7 +345,8 @@
 
 @media (min-width: 432px) {
   #main-read-article {
-    @include style-main-container(116px 28px 40px);
+    @include style-main-container(82px 16px 40px);
+    justify-content: center;
 
     .container-wrapper {
       padding: 24px 16px;
@@ -383,9 +385,15 @@
   }
 }
 
+@media (min-width: 464px) {
+  #main-read-article {
+    @include style-main-container(118px 28px 80px);
+  }
+}
+
 @media (min-width: 544px) {
   #main-read-article {
-    @include style-main-container(116px 32px 40px);
+    @include style-main-container(112px 32px 48px);
 
     .container-wrapper {
       padding: 24px 20px;
@@ -425,7 +433,7 @@
 
 @media (min-width: 640px) {
   #main-read-article {
-    @include style-main-container(116px 64px 40px);
+    @include style-main-container(128px 64px 48px);
 
     .container-wrapper {
       padding: 24px;
@@ -441,7 +449,7 @@
 
 @media (min-width: 768px) {
   #main-read-article {
-    @include style-main-container(116px 88px 40px);
+    @include style-main-container(128px 88px 48px);
 
     .container-wrapper {
       .read-article__heading {
@@ -459,7 +467,7 @@
 
 @media (min-width: 840px) {
   #main-read-article {
-    @include style-main-container(116px 140px 40px);
+    @include style-main-container(128px 140px 48px);
 
     .container-wrapper {
       padding: 24px;
@@ -475,18 +483,18 @@
 
 @media (min-width: 960px) {
   #main-read-article {
-    @include style-main-container(96px 200px 40px);
+    @include style-main-container(128px 200px 48px);
   }
 }
 
 @media (min-width: 1024px) {
   #main-read-article {
-    @include style-main-container(96px 240px 40px);
+    @include style-main-container(128px 240px 48px);
   }
 }
 
 @media (min-width: 1200px) {
   #main-read-article {
-    @include style-main-container(96px 320px 40px);
+    @include style-main-container(128px 320px 48px);
   }
 }
