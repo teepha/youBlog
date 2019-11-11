@@ -30,10 +30,6 @@
       @include style-navbar-brand($color-white);
     }
 
-    .navbar-search-bar {
-      display: none;
-    }
-
     .navbar-toggle-btn {
       display: none;
     }
@@ -90,23 +86,23 @@
       }
     }
 
-    .navbar-search-bar {
-      padding-left: 0;
-      padding-right: 0;
-      margin: 10px 0 8px;
-      display: none;
-
-      input[type="text"] {
-        border: 1px solid $color-grey;
-        border-radius: 4px;
-        padding: 4px 8px;
-      }
-    }
-
     .main-navbar {
       display: none;
 
       .navbar-nav {
+        .navbar-search-bar {
+          padding-left: 0;
+          padding-right: 0;
+          margin: 10px 8px 8px;
+          display: none;
+
+          input[type="text"] {
+            border: 1px solid $color-grey;
+            border-radius: 4px;
+            padding: 4px 8px;
+          }
+        }
+
         li {
           a {
             i {
@@ -260,6 +256,13 @@ footer {
 }
 
 @media (min-width: 368px) {
+  .navbar-default {
+    #pages-container {
+      .navbar-toggle-btn {
+        margin: 0.75rem 1rem 0.75rem 65%;
+      }
+    }
+  }
   /* Footer */
   footer {
     .container {
@@ -300,16 +303,25 @@ footer {
       justify-content: normal;
 
       .navbar-brand {
-        margin-left: 15%;
+        margin-left: 36px;
+      }
+
+      .navbar-toggle-btn {
+        margin: 0.75rem 1rem 0.75rem 68%;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-default {
+    #pages-container {
+      .navbar-brand {
+        margin-left: 48px;
       }
 
       .navbar-toggle-btn {
         display: none;
-      }
-
-      .navbar-search-bar {
-        display: flex;
-        margin: 0 8px 0 40%;
       }
 
       .main-navbar {
@@ -317,7 +329,11 @@ footer {
 
         .navbar-nav {
           display: flex;
-          margin: 0;
+          margin-left: 260px;
+
+          .navbar-search-bar {
+            display: block;
+          }
 
           li {
             a {
@@ -334,27 +350,17 @@ footer {
   }
 }
 
-@media (min-width: 704px) {
-  .navbar-default {
-    #pages-container {
-      .navbar-search-bar {
-        display: flex;
-        margin: 0 8px 0 45%;
-      }
-    }
-  }
-}
-
 @media (min-width: 832px) {
   .navbar-default {
     #pages-container {
       .navbar-brand {
-        margin-left: 32%;
+        margin-left: 52px;
       }
 
-      .navbar-search-bar {
-        display: flex;
-        margin: 0 8px 0 44%;
+      .main-navbar {
+        .navbar-nav {
+          margin-left: 340px;
+        }
       }
     }
   }
@@ -364,12 +370,13 @@ footer {
   .navbar-default {
     #pages-container {
       .navbar-brand {
-        margin-left: 48%;
+        margin-left: 64px;
       }
 
-      .navbar-search-bar {
-        display: flex;
-        margin: 0 8px 0 54%;
+      .main-navbar {
+        .navbar-nav {
+          margin-left: 400px;
+        }
       }
     }
   }
@@ -379,12 +386,13 @@ footer {
   .navbar-default {
     #pages-container {
       .navbar-brand {
-        margin-left: 72%;
+        margin-left: 80px;
       }
 
-      .navbar-search-bar {
-        display: flex;
-        margin: 0 8px 0 56%;
+      .main-navbar {
+        .navbar-nav {
+          margin-left: 560px;
+        }
       }
     }
   }
@@ -394,12 +402,13 @@ footer {
   .navbar-default {
     #pages-container {
       .navbar-brand {
-        margin-left: 180%;
+        margin-left: 120px;
       }
 
-      .navbar-search-bar {
-        display: flex;
-        margin: 0 8px 0 60%;
+      .main-navbar {
+        .navbar-nav {
+          margin-left: 720px;
+        }
       }
     }
   }

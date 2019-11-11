@@ -5,10 +5,6 @@
       <%= link_to 'youBlog', root_path, class: "navbar-brand" %>
     </div>
 
-    <div class="navbar-search-bar">
-      <input type="text" class="search-bar__input" placeholder="Search">
-    </div>
-
     <div class="navbar-toggle-btn">
       <i class="fas fa-bars"></i>
     </div>
@@ -22,6 +18,9 @@
       <div class="main-navbar" id="main-navbar">
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
+            <li class="navbar-search-bar">
+              <input type="text" class="search-bar__input" placeholder="Search here...">
+            </li>
             <li><a href="#"><i class="far fa-bell"></i></a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -62,7 +61,7 @@
           <li><%= link_to "Categories", categories_path %></li>
           <li><%= link_to "Write a post", new_article_path %></li>
           <li><%= link_to "My Profile", user_path(current_user) %></li>
-          <li role="separator" class="divider"></li>
+          <hr />
           <li><%= link_to "LogOut", logout_path, method: :delete %></li>
         <% else %>
           <li><%= link_to 'Bloggers', users_path, class: "bloggers__link" %></li>
