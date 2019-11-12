@@ -133,7 +133,7 @@
 
   .container-wrapper {
     position: relative;
-    margin: 72px 17% 32px;
+    margin: 60px 16px 32px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -145,6 +145,7 @@
       h2 {
         margin-bottom: 0;
         color: $color-grey;
+        font-size: 24px;
       }
 
       .seperator {
@@ -156,7 +157,6 @@
       .new-article {
         #article_title {
           width: 100%;
-          border: none;
           outline: none;
           margin: 1rem 0;
           padding: 1rem;
@@ -176,7 +176,7 @@
 
         .article_description-quill {
           border: 1px solid $color-orange-second;
-          height: 380px;
+          height: 300px;
           outline: none;
           margin: 1rem 0;
           padding: 12px;
@@ -193,6 +193,7 @@
 
         .input_checkbox {
           color: $color-grey;
+          font-size: 12px;
 
           .checkbox {
             border: 1px solid $color-orange-second;
@@ -214,14 +215,15 @@
 
         .new-article__actions {
           text-align: right;
-          margin: 16px 48px;
+          margin: 20px 16px;
           color: $color-orange-second;
 
           input[type="submit"] {
             border: 1px solid $color-orange-second;
             border-radius: 8px;
-            padding: 8px 12px 6px;
-            font-size: 16px;
+            padding: 6px 10px 4px;
+            font-size: 14px;
+            background: $color-white;
 
             &:hover {
               background: $color-orange-second;
@@ -347,6 +349,20 @@
     @include style-main-container(64px 28px 32px);
   }
 
+  #main-new-article,
+  #main-edit-article {
+    .container-wrapper {
+      margin: 64px 24px 32px;
+
+      .new-article__heading,
+      .edit-article__heading {
+        h2 {
+          font-size: 26px;
+        }
+      }
+    }
+  }
+
   #main-read-article {
     @include style-main-container(82px 16px 40px);
     justify-content: center;
@@ -458,6 +474,39 @@
     }
   }
 
+  #main-new-article,
+  #main-edit-article {
+    .container-wrapper {
+      margin: 64px 6% 40px;
+
+      .new-article__heading,
+      .edit-article__heading {
+        h2 {
+          font-size: 30px;
+        }
+      }
+
+      .article-editor__wrapper {
+        .new-article {
+          .article_description-quill {
+            height: 340px;
+          }
+
+          .input_checkbox {
+            font-size: 14px;
+          }
+
+          .new-article__actions {
+            input[type="submit"] {
+              padding: 8px 12px 6px;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+
   #main-read-article {
     @include style-main-container(112px 32px 48px);
 
@@ -500,6 +549,21 @@
 @media (min-width: 640px) {
   #main-articles-listing {
     @include style-main-container(78px 56px 32px);
+  }
+
+  #main-new-article,
+  #main-edit-article {
+    .container-wrapper {
+      margin: 64px 8% 40px;
+
+      .article-editor__wrapper {
+        .new-article {
+          .article_description-quill {
+            height: 380px;
+          }
+        }
+      }
+    }
   }
 
   #main-read-article {
@@ -546,6 +610,13 @@
     }
   }
 
+  #main-new-article,
+  #main-edit-article {
+    .container-wrapper {
+      margin: 72px 11% 40px;
+    }
+  }
+
   #main-read-article {
     @include style-main-container(128px 88px 48px);
 
@@ -568,6 +639,13 @@
     @include style-main-container(96px 72px 32px);
   }
 
+  #main-new-article,
+  #main-edit-article {
+    .container-wrapper {
+      margin: 72px 13% 40px;
+    }
+  }
+
   #main-read-article {
     @include style-main-container(128px 140px 48px);
 
@@ -588,6 +666,13 @@
     @include style-main-container(96px 104px 32px);
   }
 
+  #main-new-article,
+  #main-edit-article {
+    .container-wrapper {
+      margin: 72px 15% 40px;
+    }
+  }
+
   #main-read-article {
     @include style-main-container(128px 200px 48px);
   }
@@ -598,6 +683,13 @@
     @include style-main-container(96px 144px 32px);
   }
 
+  #main-new-article,
+  #main-edit-article {
+    .container-wrapper {
+      margin: 72px 17% 40px;
+    }
+  }
+
   #main-read-article {
     @include style-main-container(128px 240px 48px);
   }
@@ -606,6 +698,13 @@
 @media (min-width: 1200px) {
   #main-articles-listing {
     @include style-main-container(96px 220px 32px);
+  }
+
+  #main-new-article,
+  #main-edit-article {
+    .container-wrapper {
+      margin: 72px 24% 40px;
+    }
   }
 
   #main-read-article {
