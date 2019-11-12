@@ -68,25 +68,26 @@
   @include style-main-modal-wrapper(430px, 386px);
 
   .update-profile-modal-content {
-    @include style-modal-content(16px);
+    @include style-modal-content(12px);
+    height: 94%;
 
     #btn-close {
       @include style-close-modal-btn;
     }
 
     .update-profile-header {
-      @include style-modal-header(28px, 26px, 14px);
+      @include style-modal-header(24px, 24px, 10px);
     }
 
     .profile-form-content {
       .form-horizontal {
         @include style-profile-form-horizontal;
-        
+
         .col-sm-6 {
           width: 100%;
 
           input {
-            @include style-input-field(360px, 4px, 38px);
+            @include style-input-field(264px, 4px, 38px);
           }
 
           .fa-user,
@@ -97,11 +98,11 @@
           }
 
           .form-textarea {
-            @include style-input-field(360px, 4px, 76px);
+            @include style-input-field(264px, 4px, 76px);
           }
 
           input[type="submit"] {
-            @include style-submit-btn(18px, 12px, 5%);
+            @include style-submit-btn(16px, 10px, 5%);
           }
         }
       }
@@ -111,4 +112,81 @@
 
 .update-profile-modal-overlay {
   @include style-modal-overlay;
+}
+
+@media (min-width: 352px) {
+  #update-profile-modal {
+    .update-profile-modal-content {
+      .profile-form-content {
+        .form-horizontal {
+          .col-sm-6 {
+            input {
+              @include style-input-field(300px, 4px, 38px);
+            }
+
+            .form-textarea {
+              @include style-input-field(300px, 4px, 76px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 380px) {
+  #update-profile-modal {
+    .update-profile-modal-content {
+      @include style-modal-content(14px);
+      height: 96%;
+
+      .profile-form-content {
+        .form-horizontal {
+          .col-sm-6 {
+            input {
+              @include style-input-field(330px, 4px, 38px);
+            }
+
+            .form-textarea {
+              @include style-input-field(330px, 4px, 76px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 432px) {
+  #update-profile-modal {
+    @include style-main-modal-wrapper(410px, 384px);
+    max-width: 100%;
+
+    .update-profile-modal-content {
+      @include style-modal-content(16px);
+      height: 100%;
+
+      .update-profile-header {
+        @include style-modal-header(28px, 26px, 14px);
+      }
+
+      .profile-form-content {
+        .form-horizontal {
+          .col-sm-6 {
+            input {
+              @include style-input-field(360px, 4px, 38px);
+            }
+
+            .form-textarea {
+              @include style-input-field(360px, 4px, 76px);
+            }
+
+            input[type="submit"] {
+              @include style-submit-btn(18px, 12px, 5%);
+            }
+          }
+        }
+      }
+    }
+  }
 }
