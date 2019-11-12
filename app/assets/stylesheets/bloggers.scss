@@ -75,7 +75,7 @@
     }
 
     .update-profile-header {
-      @include style-modal-header;
+      @include style-modal-header(28px, 26px, 14px);
     }
 
     .profile-form-content {
