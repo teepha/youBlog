@@ -18,9 +18,12 @@
         <div class="article-actions">
           <span><%= link_to "READ MORE", article_path(article), class: "readmore-action" %></span>
           <span>
-            <% if logged_in? && (current_user == article.user || current_user.admin?) %>
+            <% if logged_in? && current_user == article.user %>
               <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_article_path(article) %>
               |
+              <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, article_path(article), method: :delete,
+                data: {confirm: "Are you sure you want to delete?"} %>
+            <% elsif logged_in? && current_user.admin? %>
               <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, article_path(article), method: :delete,
                 data: {confirm: "Are you sure you want to delete?"} %>
             <% end %>

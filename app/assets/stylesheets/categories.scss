@@ -1,10 +1,10 @@
 @import "variables";
 @import "base";
 
-@mixin style-btn-container {
+@mixin style-btn-container($top, $right) {
   position: absolute;
-  top: 24px;
-  right: 48px;
+  top: $top;
+  right: $right;
 }
 
 @mixin style-btn {
@@ -30,7 +30,8 @@
   @include style-main-container(0px);
 
   .container-wrapper {
-    @include style-container-wrapper(100px 16px 30px);
+    @include style-container-wrapper(56px 16px 24px);
+    // @include style-container-wrapper(100px 16px 30px);
 
     .category-listing__heading {
       @include style-list-heading(32px 0 24px 12px);
@@ -45,7 +46,9 @@
     }
 
     .new-category {
-      @include style-btn-container;
+      position: relative;
+      float: right;
+      margin: 0 12px 20px 0;
 
       .new-category__btn {
         @include style-btn;
@@ -164,7 +167,7 @@
     }
 
     .edit-item-category {
-      @include style-btn-container;
+      @include style-btn-container(24px, 48px);
 
       .edit-category__btn {
         @include style-btn;
@@ -232,7 +235,7 @@
 @media (min-width: 432px) {
   #main-category-listing {
     .container-wrapper {
-      margin: 100px 30px 0;
+      margin: 56px 30px 24px;
 
       .category-listing__heading {
         h2 {
@@ -246,7 +249,10 @@
 @media (min-width: 544px) {
   #main-category-listing {
     .container-wrapper {
-      margin: 100px 30px 0;
+      .new-category {
+        @include style-btn-container(52px, 24px);
+        margin: 0;
+      }
     }
   }
 }
@@ -265,6 +271,10 @@
           font-size: 32px;
         }
       }
+
+      .new-category {
+        @include style-btn-container(68px, 24px);
+      }
     }
   }
 }
@@ -276,6 +286,10 @@
 
       .category-listing__heading {
         margin: 0 0 32px 32px;
+      }
+
+      .new-category {
+        @include style-btn-container(30px, 30px);
       }
     }
   }
@@ -308,6 +322,20 @@
 
       .category-listing__heading {
         margin: 0 0 32px 48px;
+      }
+
+      .new-category {
+        @include style-btn-container(30px, 40px);
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  #main-category-listing {
+    .container-wrapper {
+      .new-category {
+        @include style-btn-container(30px, 48px);
       }
     }
   }
