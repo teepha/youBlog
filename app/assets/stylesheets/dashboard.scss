@@ -1,13 +1,6 @@
 @import "variables";
 @import "base";
 
-@mixin style-grid($grid, $grid-gap) {
-  display: grid;
-  grid-template-columns: $grid;
-  grid-gap: $grid-gap;
-  justify-content: center;
-}
-
 #main-dashboard {
   display: grid;
   grid-template-rows: 54px 212px 45px auto;
@@ -21,7 +14,7 @@
     background: $color-dark-white;
 
     .profile-info {
-      @include style-grid(150px 420px, 24px);
+      @include style-listings-grid(150px 420px, 24px);
       width: 100%;
       margin: 0 auto;
       align-items: center;
@@ -107,7 +100,7 @@
         }
 
         .articles-grid {
-          @include style-grid(repeat(2, 45%), 30px);
+          @include style-listings-grid(repeat(2, 45%), 30px);
 
           .article__wrapper {
             .article {
