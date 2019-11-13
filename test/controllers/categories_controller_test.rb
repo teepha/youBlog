@@ -6,15 +6,14 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
     @user = User.create(username: "john", email: "john@example.com", password: "password", admin: true)
   end
 
-
   test "should get categories index" do
     get categories_path
     assert_response :success
   end
 
-  test "should get new" do
+  test "should get create" do
     sign_in_as(@user, "password")
-    get new_category_path
+    post categories_path
     assert_response :success
   end
 
@@ -22,7 +21,15 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
     get category_path(@category)
     assert_response :success
   end
-  
+
+  test "should get update" do
+    sign_in_as(@user, "password")
+    put "/categories/#{@category.id}",
+      params: { category: {name: "shoes"} }
+    assert_response :redirect
+    follow_redirect!
+  end
+
   test "should redirect create when admin not logged in" do
     assert_no_difference 'Category.count' do
       post categories_path, params: { category: {name: "sports"} }
