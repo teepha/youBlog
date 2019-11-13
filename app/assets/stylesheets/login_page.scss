@@ -9,7 +9,7 @@
 
     .login-form {
       display: flex;
-      @include style-auth-form(90%);
+      @include style-auth-form(100%);
 
       .form-horizontal {
         @include style-form-horizontal;
@@ -47,6 +47,43 @@
 
       .social-links {
         @include style-social-links;
+      }
+    }
+  }
+}
+
+@media (max-width: 432px) {
+  #main-login {
+    .container-fluid {
+      margin-top: 48px;
+      
+      h2 {
+        font-size: 15px;
+        margin-bottom: 24px;
+      }
+
+      .login-form {
+        width: 98%;
+
+        .form-horizontal {
+          .login-header {
+            font-size: 16px;
+            line-height: 18px;
+          }
+
+          .col-sm-6 {
+            padding-left: 12px;
+
+            input {
+              min-width: 248px;
+              padding-left: 32px;
+            }
+          }
+        }
+
+        p {
+          margin-bottom: 16px;
+        }
       }
     }
   }

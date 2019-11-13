@@ -39,7 +39,7 @@
       padding: 0.6rem 2rem;
       border-radius: 4px;
       font-size: 1rem;
-      margin-left: 50%;
+      margin-left: 36%;
 
       &:hover {
         background: $color-orange-first;
@@ -274,6 +274,14 @@ footer {
 }
 
 @media (min-width: 432px) {
+  .navbar-default {
+    #auth-container {
+      span {
+        margin-left: 45%;
+      }
+    }
+  }
+
   footer {
     .container {
       .footer-link {
@@ -299,6 +307,12 @@ footer {
 
 @media (min-width: 640px) {
   .navbar-default {
+    #auth-container {
+      span {
+        margin-left: 50%;
+      }
+    }
+
     #pages-container {
       justify-content: normal;
 
