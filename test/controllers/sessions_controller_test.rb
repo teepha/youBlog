@@ -5,7 +5,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     @user = User.create(username: "john", email: "john@example.com", password: "password", admin: true)
   end
 
-  test "should get new login" do
+  test "should get new" do
     get login_path
     assert_response :success
   end
@@ -16,7 +16,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     follow_redirect!
   end
 
-  test "should get delete article" do
+  test "should get logout" do
     sign_in_as(@user, "password")
     delete "/users/#{@user.id}"
     assert_redirected_to users_path
