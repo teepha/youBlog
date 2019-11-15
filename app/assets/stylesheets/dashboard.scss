@@ -3,24 +3,22 @@
 
 #main-dashboard {
   display: grid;
-  grid-template-rows: 54px 212px 45px auto;
+  grid-template-rows: 200px 212px 45px auto;
   flex: 1;
 
   .container-fluid {
     width: 100%;
     padding: 0;
-    margin: 55px auto auto;
+    margin: 48px auto auto;
     padding: 18px 0 36px;
     background: $color-dark-white;
 
     .profile-info {
-      @include style-listings-grid(150px 420px, 24px);
       width: 100%;
       margin: 0 auto;
-      align-items: center;
+      text-align: center;
 
       .profile-info__content {
-        max-width: 420px;
         color: $color-grey;
 
         .user-name {
@@ -71,7 +69,8 @@
     p {
       color: $color-white;
       align-self: center;
-      margin: 0 32px;
+      margin: 0 16px;
+      // margin: 0 32px;
       padding: 5px 7px;
       cursor: pointer;
     }
@@ -83,7 +82,8 @@
 
   .dashboard-tab {
     grid-row: 4/5;
-    margin: 40px 160px;
+    margin: 40px 0;
+    // margin: 40px 160px;
     display: flex;
     flex: 1;
     justify-content: center;
@@ -100,7 +100,7 @@
         }
 
         .articles-grid {
-          @include style-listings-grid(repeat(2, 45%), 30px);
+          @include style-listings-grid(repeat(1, 90%), 30px);
 
           .article__wrapper {
             .article {
@@ -172,12 +172,161 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 432px) {
+  #main-dashboard {
+    .dashboard-tab__menu {
+      p {
+        margin: 0 32px;
+      }
+    }
+
+    .dashboard-tab {
+      .main-posts__wrapper {
+        .main-posts {
+          .articles-grid {
+            @include style-listings-grid(repeat(1, 84%), 30px);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 544px) {
+  #main-dashboard {
+    grid-template-rows: 50px 212px 45px auto;
+
+    .container-fluid {
+      margin: 48px auto auto;
+
+      .profile-info {
+        @include style-listings-grid(120px 320px, 0px);
+        align-items: center;
+
+        .profile-info__image {
+          .img-circle {
+            height: 120px;
+          }
+        }
+      }
+    }
+    .dashboard-tab {
+      .main-posts__wrapper {
+        .main-posts {
+          .articles-grid {
+            @include style-listings-grid(repeat(1, 84%), 30px);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 640px) {
   #main-dashboard {
     .dashboard-tab {
-      .main-posts {
-        grid-template-columns: repeat(2, 40%);
+      .main-posts__wrapper {
+        .main-posts {
+          .articles-grid {
+            @include style-listings-grid(repeat(2, 42%), 24px);
+          }
+        }
       }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  #main-dashboard {
+    .container-fluid {
+      .profile-info {
+        @include style-listings-grid(140px 320px, 24px);
+
+        .profile-info__image {
+          .img-circle {
+            height: 140px;
+          }
+        }
+      }
+    }
+
+    .dashboard-tab__menu {
+      p {
+        margin: 0 48px;
+        font-size: 16px;
+      }
+    }
+
+    .dashboard-tab {
+      .main-posts__wrapper {
+        .main-posts {
+          .articles-grid {
+            @include style-listings-grid(repeat(2, 42%), 30px);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  #main-dashboard {
+    .dashboard-tab__menu {
+      p {
+        margin: 0 56px;
+      }
+    }
+  }
+}
+
+@media (min-width: 840px) {
+  #main-dashboard {
+    .dashboard-tab {
+      margin: 40px 24px;
+    }
+  }
+}
+
+@media (min-width: 1104px) {
+  #main-dashboard {
+    .container-fluid {
+      .profile-info {
+        @include style-listings-grid(150px 420px, 24px);
+
+        .profile-info__image {
+          .img-circle {
+            height: 150px;
+          }
+        }
+      }
+    }
+
+    .dashboard-tab__menu {
+      p {
+        margin: 0 72px;
+      }
+    }
+
+    .dashboard-tab {
+      margin: 40px 160px;
+
+      .main-posts__wrapper {
+        .main-posts {
+          grid-template-columns: repeat(2, 40%);
+
+          .articles-grid {
+            @include style-listings-grid(repeat(2, 45%), 30px);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1360px) {
+  #main-dashboard {
+    .dashboard-tab {
+      margin: 40px 200px;
     }
   }
 }
