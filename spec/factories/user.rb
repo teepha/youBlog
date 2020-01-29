@@ -3,10 +3,10 @@ FactoryBot.define do
     username { Faker::Name.first_name}
     email { Faker::Internet.email }
     password { Faker::Lorem.word }
-    biography { Faker::Lorem.sentence(10) }
+    biography { Faker::Lorem.sentence(8) }
 
     factory :admin do
-      is_admin { true }
+      admin { true }
     end
   end
 end

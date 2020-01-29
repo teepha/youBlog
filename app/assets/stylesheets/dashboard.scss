@@ -10,7 +10,7 @@
     width: 100%;
     padding: 0;
     margin: 48px auto auto;
-    padding: 18px 0 36px;
+    padding: 24px 0 40px;
     background: $color-dark-white;
 
     .profile-info {
@@ -195,8 +195,6 @@
     grid-template-rows: 50px 212px 45px auto;
 
     .container-fluid {
-      margin: 48px auto auto;
-
       .profile-info {
         @include style-listings-grid(120px 320px, 0px);
         align-items: center;

@@ -17,8 +17,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def require_same_user(obj, path)
-    if current_user != obj && !current_user.admin?
+  def require_same_user(user, path)
+    if current_user != user && !current_user.admin?
       flash[:danger] = "Sorry, you are not authorized to perform this action!"
       redirect_to path
     end 
