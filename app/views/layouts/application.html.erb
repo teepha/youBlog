@@ -16,12 +16,9 @@
     <header>
       <%= render 'layouts/navigation' %>
     </header>
-    <%
-=begin%>
- <%= render 'layouts/messages' %> 
-<%
-=end%>
+    <%= render 'layouts/messages' %> 
     <%= yield %>
+    <%= render 'layouts/messages' %> 
     <%= render 'layouts/footer' %>
     <%
 =begin%>
