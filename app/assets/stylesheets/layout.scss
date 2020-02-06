@@ -16,6 +16,14 @@
   font-size: 24px;
 }
 
+.alert {
+  position: absolute;
+  top: 80px;
+  right: 36px;
+  width: 30%;
+  z-index: 1000;
+}
+
 .navbar-default {
   position: absolute;
   background-color: transparent;

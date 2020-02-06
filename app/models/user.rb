@@ -10,7 +10,7 @@ class User < ApplicationRecord
               uniqueness: { case_sensitive: false }, 
               format: { with: VALID_EMAIL_REGEX }
   validates :biography, length: { maximum: 100 }
-  validates :password_digest, presence: true
+  validates_presence_of :password_digest, :on => :create
 
   has_many :articles, dependent: :destroy
 end
