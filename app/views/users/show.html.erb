@@ -19,7 +19,7 @@
               <%  if logged_in? && current_user.admin? %>
                 <%= link_to  "Delete", user_path(@user), method: :delete,
                     data: {confirm: "Are you sure you want to delete?"}, 
-                    class: "profile-info__action" , type: "button" %>
+                    class: "profile-info__action" , id: "delete-btn", type: "button" %>
               <% end %>
             <% end %>
           </div>
