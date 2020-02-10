@@ -11,8 +11,8 @@ class SessionsController < ApplicationController
       flash[:success] = "Welcome back #{user.username} : )"
       redirect_to user_path(user)
     else
-      flash.now[:danger] = "Invalid login details!"
-      render 'new'
+      flash[:danger] = "Invalid login details!"
+      redirect_to login_path
     end
   end
 

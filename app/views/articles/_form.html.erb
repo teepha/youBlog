@@ -1,5 +1,3 @@
-<%= render 'shared/errors', obj: @article %>
-
 <div class='article-editor__wrapper'>
     <%= form_for(@article, :html => {class: "new-article", role: "form"}) do |f| %>
       <%= f.text_field :title, placeholder: "Title please...", autofocus: true %>

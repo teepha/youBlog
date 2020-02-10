@@ -3,9 +3,8 @@ class User < ApplicationRecord
   has_secure_password
 
   before_save { self.email = email.downcase }
-  validates :username, presence: true,
-              uniqueness: { case_sensitive: false }, 
-              length: { minimum: 3, maximum: 25 }
+  validates :username, presence: true, length: { maximum: 25 },
+              uniqueness: { case_sensitive: false }
   validates :email, presence: true, length: { maximum: 75 },
               uniqueness: { case_sensitive: false }, 
               format: { with: VALID_EMAIL_REGEX }
