@@ -25,9 +25,9 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                 <% if current_user.admin? %>
-                  <i class="fas fa-user-shield"></i>
+                  <i class="fas fa-user-shield user-profile"></i>
                 <% else %>
-                  <i class="fas fa-user"></i>
+                  <i class="fas fa-user user-profile" ></i>
                 <% end %>
                 <span class="caret"></span>
               </a>
@@ -38,7 +38,7 @@
                 <li><%= link_to "Write a post", new_article_path %></li>
                 <li><%= link_to "My Profile", user_path(current_user) %></li>
                 <li role="separator" class="divider"></li>
-                <li><%= link_to "LogOut", logout_path, method: :delete %></li>
+                <li><%= link_to "LogOut", logout_path, class: "logout__link", method: :delete %></li>
               </ul>
             </li>
           <% else %>

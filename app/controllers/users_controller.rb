@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       flash[:success] = "Welcome to youBlog #{@user.username}"
       redirect_to user_path(@user)
     else
-      flash[:danger] = "Sorry, email already exists!"
+      flash[:danger] = "#{@user.errors.full_messages[1]}"
       redirect_to signup_path
     end
   end
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
       flash[:success] = "Your account was updated successfully"
       redirect_to user_path(@user)
     else
-      flash[:danger] = "Sorry, an error occured!"
+      flash[:danger] = "#{@user.errors.full_messages[0]}"
       redirect_to user_path(@user)
     end
   end
