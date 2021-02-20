@@ -78,7 +78,7 @@ RSpec.describe "Users", type: :request do
       end
 
       it "returns an error if the update params are invalid" do
-        put "/users/#{userx.id}", { params: { user: { :username => 'as' } } }
+        put "/users/#{userx.id}", { params: { user: { :email => 'test.email' } } }
         expect(flash[:danger]).to eq("Sorry, an error occured!")
         expect(response).to redirect_to(user_path(userx))
       end
@@ -118,7 +118,7 @@ RSpec.describe "Users", type: :request do
 
       it "returns an error if the user tries to delete another user's record" do
         delete "/users/#{user.id}"
-        expect(flash[:danger]).to eq("Unauthorized! Only an admin can perform this action.")
+        expect(flash[:danger]).to eq("Sorry, you are not authorized to perform this action!")
         expect(response).to redirect_to(users_path)
       end
     end
